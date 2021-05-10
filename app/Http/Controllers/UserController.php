@@ -49,10 +49,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user=User::find($id);
-
+        $user->update($request->all());
+        return redirect('/doctor');
+    }
+    public function estado( User $user)
+    {
+        if ($user->estado=='ACTIVO')
+            $user->estado='INACTIVO';
+        else
+            $user->estado='ACTIVO';
+        return redirect('/doctor');
     }
 
     /**
@@ -61,8 +69,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/doctor');
     }
 }

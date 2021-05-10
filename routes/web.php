@@ -26,4 +26,4 @@ Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->m
 Route::get('/reportes', [App\Http\Controllers\HomeController::class, 'reportes'])->middleware('auth');
 
 Route::apiResource('/user', App\Http\Controllers\UserController::class)->middleware('auth');
-
+Route::get('/estado/{user}', [App\Http\Controllers\UserController::class, 'pass'])->middleware('auth');
