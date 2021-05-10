@@ -98,8 +98,13 @@
 {{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
                                                         <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}"><i class="fa fa-pencil"></i></button>
                                                         <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#key" data-id="{{$user->id}}" data-name="{{$user->name}}"><i class="fa fa-key"></i></button>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                        <a href="#" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></a>
+                                                        <form action="user/{{$user->id}}">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                        </form>
+
+                                                        <a href="/estado/{{$user->id}}" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></a>
                                                     </div>
                                                 </div>
                                             </td>
