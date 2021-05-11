@@ -107,7 +107,7 @@
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
                                                         <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-list"></i></button>
-                                                        <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-plus-circle"></i></button>
+                                                        <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#laboratorio" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-edad="{{$paciente->age()}}" data-sexo="{{$paciente->sexo}}" ><i class="fa fa-plus-circle"></i></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -157,6 +157,63 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="modal fade" id="laboratorio" tabindex="-1" aria-labelledby="laboratorioLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" style="min-width: 98%">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-warning">
+                                                <h5 class="modal-title " id="laboratorioLabel"></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group row">
+{{--                                                    <label class="col-sm-3 col-form-label">Laboratorio</label>--}}
+                                                    <div class="col-sm-12">
+{{--                                                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo">--}}
+                                                        <select name="laboratorio" style="color: black" class="form-control" id="lal">
+                                                            <option value="">Selecionar laboratorio...</option>
+                                                            <option value="hemograma">Hemograma completo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <form method="post" action="" >
+                                                    <table border="1" style="width: 100%;color: black">
+                                                        <tr>
+                                                            <td colspan="3" style="text-align: center"><h3>HEMOGRAMA COMPLETO</h3></td>
+                                                            <td>Form. 001</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color: darkblue">PACIENTE</td>
+                                                            <td><label id="txtnombre"></label></td>
+                                                            <td style="color: darkblue">EDAD</td>
+                                                            <td><label id="txtedad"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color: darkblue">REQUERIDO POR</td>
+                                                            <td><input type="text" style="width: 100%" placeholder="Requerido por"></td>
+                                                            <td style="color: darkblue">SEXO</td>
+                                                            <td><label id="txtsexo"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color: darkblue">TIPO MUESTRA</td>
+                                                            <td><input type="text" style="width: 100%" placeholder="Tipo muestra"></td>
+                                                            <td style="color: darkblue">N PACIENTE</td>
+                                                            <td><label id="txtn"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color: darkblue">METODO</td>
+                                                            <td colspan="3">
+                                                                Contador Hematologico MINDRAY BC 5130
+                                                                Hematocrito (Metodo Manual) Hemoglobina (Clanmetahemoglobina reactivo drabking)
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -189,6 +246,19 @@
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
                 modal.find('.modal-title').text('Paciente ' + button.data('nombre'))
+                // modal.find('.modal-body input').val(recipient)
+            })
+            $('#laboratorio').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                console.log(button.data('sexo'));
+                $('#txtnombre').html(button.data('nombre'));
+                $('#txtsexo').html(button.data('sexo'));
+                $('#txtedad').html(button.data('edad'));
+                $('#txtn').html(button.data('id'));
+                // $('#frmmodificar').attr('action','paciente/'+button.data('id'));
+                // console.log($('#frmmodificar').attr('action'));
+                var modal = $(this)
+                modal.find('.modal-title').text('Laboratorio para: ' + button.data('nombre'))
                 // modal.find('.modal-body input').val(recipient)
             })
         }
