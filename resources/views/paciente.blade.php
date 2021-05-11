@@ -19,39 +19,41 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">
-                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-user-plus"></i> Crear nuevo doctor</button>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-users"></i> Crear nuevo paciente</button>
                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header bg-success ">
-                                                <h5 class="modal-title text-white"><i class="fa fa-user-plus"></i>Crear nuevo doctor</h5>
+                                                <h5 class="modal-title text-white"><i class="fa fa-users"></i>Crear nuevo paciente</h5>
                                                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="post" action="/user">
+                                                <form method="post" action="/paciente">
                                                     @csrf
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Nombre Completo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="name" class="form-control" placeholder="Nombre Completo">
+                                                            <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Email</label>
+                                                        <label class="col-sm-3 col-form-label">Fecha Nacimiento</label>
                                                         <div class="col-sm-9">
-                                                            <input type="email" name="email" class="form-control" placeholder="Email">
+                                                            <input type="date" name="fechanac" class="form-control" placeholder="Fecha Nacimiento">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Password</label>
+                                                        <label class="col-sm-3 col-form-label">Sexo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="password" name="password" class="form-control" placeholder="Password">
+{{--                                                            <input type="date" name="fechanac" class="form-control" placeholder="Sexo">--}}
+                                                            <input type="radio" name="sexo" value="Masculino" checked> Masculino
+                                                            <input type="radio" name="sexo" value="Femenino"> Femenino
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
-                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-user-plus"></i>Crear doctor</button>
+                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-user-plus"></i>Crear paciente</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -68,9 +70,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nombre completo</th>
-                                        <th>Email</th>
-                                        <th>Tipo</th>
-                                        <th>Estado</th>
+                                        <th>Fecha nacimiento</th>
+                                        <th>Edad</th>
+                                        <th>Sexo</th>
+{{--                                        <th>Estado</th>--}}
                                         <th>Opciones</th>
 {{--                                        <th>Email</th>--}}
 {{--                                        <th>Joining Date</th>--}}
@@ -78,35 +81,33 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($users as $user)
+                                    @foreach ($pacientes as $paciente)
                                         <tr>
                                             <td>
                                                 {{$loop->index+1}}
                                             </td>
-                                            <td>{{$user->name}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td>{{$user->tipo}}</td>
-                                            @if($user->active==1)
-                                                <td><span class="badge badge-success badge-sm">ACTIVO</span></td>
-                                            @else
-                                                <td><span class="badge badge-danger badge-sm">INACTIVO</span></td>
-                                            @endif
-
+                                            <td>{{$paciente->nombre}}</td>
+                                            <td>{{$paciente->fechanac}}</td>
+                                            <td> <p>{{ $paciente->age() }} Años</p></td>
+                                            <td>{{$paciente->sexo}}</td>
+{{--                                            @if($paciente->active==1)--}}
+{{--                                                <td><span class="badge badge-success badge-sm">ACTIVO</span></td>--}}
+{{--                                            @else--}}
+{{--                                                <td><span class="badge badge-danger badge-sm">INACTIVO</span></td>--}}
+{{--                                            @endif--}}
                                             <td>
                                                 <div class="d-flex">
                                                     <div class="btn-group">
 {{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
-                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}"><i class="fa fa-pencil"></i></button>
-                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#key" data-id="{{$user->id}}" data-name="{{$user->name}}"><i class="fa fa-key"></i></button>
-                                                        <form action="user/{{$user->id}}" method="post">
+                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-pencil"></i></button>
+
+                                                        <form action="paciente/{{$paciente->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
-                                                        <form action="estado/{{$user->id}}" method="post">
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></button>
-                                                        </form>
+                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-list"></i></button>
+                                                        <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-plus-circle"></i></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -115,7 +116,7 @@
                                     </tbody>
                                 </table>
                                 <div class="modal fade" id="modificar" tabindex="-1" aria-labelledby="modificarLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header bg-warning">
                                                 <h5 class="modal-title " id="modificarLabel"></h5>
@@ -130,46 +131,26 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Nombre Completo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre Completo">
+                                                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Email</label>
+                                                        <label class="col-sm-3 col-form-label">Fecha Nacimiento</label>
                                                         <div class="col-sm-9">
-                                                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                                            <input type="date" name="fechanac" id="fechanac" class="form-control" placeholder="Fecha Nacimiento">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Sexo</label>
+                                                        <div class="col-sm-9">
+                                                            {{--                                                            <input type="date" name="fechanac" class="form-control" placeholder="Sexo">--}}
+                                                            <input type="radio" name="sexo" id="sexo1" value="Masculino" checked> Masculino
+                                                            <input type="radio" name="sexo" id="sexo2" value="Femenino"> Femenino
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
                                                         <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-user-plus"></i>Modificar doctor</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal fade" id="key" tabindex="-1" aria-labelledby="keyLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-info">
-                                                <h5 class="modal-title text-white" id="keyLabel"></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="post" action="" id="frmkey">
-                                                    @csrf
-                                                    @method('put')
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Password</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
-                                                        <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-key"></i>Modificar Password</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -195,22 +176,19 @@
 
             $('#modificar').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
-                $('#name').val(button.data('name'));
-                $('#email').val(button.data('email'));
-                $('#frmmodificar').attr('action','user/'+button.data('id'));
+                $('#nombre').val(button.data('nombre'));
+                $('#fechanac').val(button.data('fechanac'));
+                // console.log(button.data('fechanac'))
+                // $('#sexo').val(button.data('sexo'));
+                if (button.data('sexo')=='Masculino'){
+                    $('#sexo1').prop('checked', true);
+                }else{
+                    $('#sexo2').prop('checked', true);
+                }
+                $('#frmmodificar').attr('action','paciente/'+button.data('id'));
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
-                modal.find('.modal-title').text('Doctor ' + button.data('name'))
-                // modal.find('.modal-body input').val(recipient)
-            })
-            $('#key').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) // Button that triggered the modal
-                // $('#name').val(button.data('name'));
-                // $('#email').val(button.data('email'));
-                $('#frmkey').attr('action','user/'+button.data('id'));
-                // console.log($('#frmmodificar').attr('action'));
-                var modal = $(this)
-                modal.find('.modal-title').text('Doctor ' + button.data('name'))
+                modal.find('.modal-title').text('Paciente ' + button.data('nombre'))
                 // modal.find('.modal-body input').val(recipient)
             })
         }

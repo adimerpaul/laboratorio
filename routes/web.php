@@ -21,9 +21,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/doctor', [App\Http\Controllers\HomeController::class, 'doctor'])->middleware('auth');
-Route::get('/paciente', [App\Http\Controllers\HomeController::class, 'paciente'])->middleware('auth');
+Route::get('/pacientes', [App\Http\Controllers\HomeController::class, 'paciente'])->middleware('auth');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->middleware('auth');
 Route::get('/reportes', [App\Http\Controllers\HomeController::class, 'reportes'])->middleware('auth');
 
 Route::apiResource('/user', App\Http\Controllers\UserController::class)->middleware('auth');
-Route::get('/estado/{user}', [App\Http\Controllers\UserController::class, 'pass'])->middleware('auth');
+Route::post('/estado/{user}', [App\Http\Controllers\UserController::class, 'estado'])->middleware('auth');
+Route::apiResource('/paciente',\App\Http\Controllers\PacienteController::class)->middleware('auth');

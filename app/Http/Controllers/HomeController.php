@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paciente;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,8 @@ class HomeController extends Controller
     }
     public function paciente()
     {
-        return view('paciente');
+        $pacientes=Paciente::all();
+        return view('paciente',['pacientes'=>$pacientes]);
     }
     public function buscar()
     {

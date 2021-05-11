@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -51,15 +52,22 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        if (isset($request->password)){
+            $user->password=Hash::make($request->password);
+            $user->save();
+        }else{
+            $user->update($request->all());
+        }
+
         return redirect('/doctor');
     }
     public function estado( User $user)
     {
-        if ($user->estado=='ACTIVO')
-            $user->estado='INACTIVO';
+        if ($user->active==1)
+            $user->active=0;
         else
-            $user->estado='ACTIVO';
+            $user->active=1;
+        $user->save();
         return redirect('/doctor');
     }
 

@@ -800,10 +800,12 @@
 {{--                    </ul>--}}
                 </li>
                 <li>
+                    @if(Auth::user()->tipo=='admin')
                     <a href="/doctor" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-television"></i>
-                        <span class="nav-text">Doctor</span>
+                        <span class="nav-text">Doctor </span>
                     </a>
+                    @endif
 {{--                    <ul aria-expanded="false">--}}
 {{--                        <li><a href="app-profile.html">Profile</a></li>--}}
 {{--                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>--}}
@@ -828,7 +830,7 @@
 {{--                    </ul>--}}
                 </li>
                 <li>
-                    <a href="/paciente" class="ai-icon" aria-expanded="false">
+                    <a href="/pacientes" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-controls-3"></i>
                         <span class="nav-text">Paciente</span>
                     </a>
