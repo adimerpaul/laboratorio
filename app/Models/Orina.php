@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hemograma extends Model
+class Orina extends Model
 {
     use HasFactory;
     protected $fillable=[
@@ -45,6 +45,10 @@ class Hemograma extends Model
         'd31',
         'd32',
         'd33',
+        'd34',
+        'd35',
+        'd36',
+        'd37',
         'paciente_id',
         'user_id',
     ];

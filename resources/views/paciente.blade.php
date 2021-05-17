@@ -177,39 +177,9 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <form method="post" action="" >
-                                                    <table border="1" style="width: 100%;color: black">
-                                                        <tr>
-                                                            <td colspan="3" style="text-align: center"><h3>HEMOGRAMA COMPLETO</h3></td>
-                                                            <td>Form. 001</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="color: darkblue">PACIENTE</td>
-                                                            <td><label id="txtnombre"></label></td>
-                                                            <td style="color: darkblue">EDAD</td>
-                                                            <td><label id="txtedad"></label></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="color: darkblue">REQUERIDO POR</td>
-                                                            <td><input type="text" style="width: 100%" placeholder="Requerido por"></td>
-                                                            <td style="color: darkblue">SEXO</td>
-                                                            <td><label id="txtsexo"></label></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="color: darkblue">TIPO MUESTRA</td>
-                                                            <td><input type="text" style="width: 100%" placeholder="Tipo muestra"></td>
-                                                            <td style="color: darkblue">N PACIENTE</td>
-                                                            <td><label id="txtn"></label></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="color: darkblue">METODO</td>
-                                                            <td colspan="3">
-                                                                Contador Hematologico MINDRAY BC 5130
-                                                                Hematocrito (Metodo Manual) Hemoglobina (Clanmetahemoglobina reactivo drabking)
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </form>
+                                                <x-f01></x-f01>
+                                                <x-f02></x-f02>
+                                                <x-f03></x-f03>
                                             </div>
                                         </div>
                                     </div>
@@ -223,6 +193,8 @@
     </div>
     <script>
         window.onload=function (){
+            $('#f01').hide();
+            $('#f02').hide();
             $('body').on('click','.eliminar',function (e){
                 // console.log($(this).val());
                 // e.preventDefault();
@@ -250,11 +222,12 @@
             })
             $('#laboratorio').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
-                console.log(button.data('sexo'));
-                $('#txtnombre').html(button.data('nombre'));
-                $('#txtsexo').html(button.data('sexo'));
-                $('#txtedad').html(button.data('edad'));
-                $('#txtn').html(button.data('id'));
+                // console.log(button.data('sexo'));
+                $('.txtnombre').html(button.data('nombre'));
+                $('.txtsexo').html(button.data('sexo'));
+                $('.txtedad').html(button.data('edad'));
+                $('.txtn').html(button.data('id'));
+                $('.paciente_id').val(button.data('id'));
                 // $('#frmmodificar').attr('action','paciente/'+button.data('id'));
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)

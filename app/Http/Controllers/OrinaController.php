@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hemograma;
+use App\Models\Orina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HemogramaController extends Controller
+class OrinaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,23 +36,17 @@ class HemogramaController extends Controller
      */
     public function store(Request $request)
     {
-//        echo "Hola soy sotre de homograma";
-//        exit;
-//        $datos=$request->all();
-//        $datos->user_id=Auth::user()->id;
-////        array_push($datos,array('user_id'=>1));
-//        return $datos;
-        Hemograma::create($request->all()+ ['user_id' => Auth::user()->id]);
+        Orina::create($request->all()+ ['user_id' => Auth::user()->id]);
         return redirect('/pacientes');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Hemograma  $hemograma
+     * @param  \App\Models\Orina  $orina
      * @return \Illuminate\Http\Response
      */
-    public function show(Hemograma $hemograma)
+    public function show(Orina $orina)
     {
         //
     }
@@ -60,10 +54,10 @@ class HemogramaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Hemograma  $hemograma
+     * @param  \App\Models\Orina  $orina
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hemograma $hemograma)
+    public function edit(Orina $orina)
     {
         //
     }
@@ -72,10 +66,10 @@ class HemogramaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Hemograma  $hemograma
+     * @param  \App\Models\Orina  $orina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hemograma $hemograma)
+    public function update(Request $request, Orina $orina)
     {
         //
     }
@@ -83,10 +77,10 @@ class HemogramaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Hemograma  $hemograma
+     * @param  \App\Models\Orina  $orina
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hemograma $hemograma)
+    public function destroy(Orina $orina)
     {
         //
     }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Paciente;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -44,5 +46,15 @@ class HomeController extends Controller
     public function reporte()
     {
         return view('reporte');
+    }
+    public function ver()
+    {
+        $pdf = App::make('dompdf.wrapper');
+//        $pdf->loadHTML('<h1>Test</h1>');
+//        return $pdf->stream();
+//        $pdf = PDF::loadView('pdf.invoice', $data);
+        $pdf = PDF::loadView('ver');
+        return $pdf->stream();
+//        return $pdf->download('invoice.pdf');
     }
 }
