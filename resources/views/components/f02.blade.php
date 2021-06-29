@@ -1,9 +1,9 @@
 <div id="f02">
-    <form method="post" action="/orina" >
+    <form method="post" action="/sanguinia" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="3" style="text-align: center"><h3>HEXAMEN GENERAL DE ORINA</h3></td>
+                <td colspan="3" style="text-align: center"><h3>QUIMICA SANGUINEA</h3></td>
                 <td>Form. 002</td>
             </tr>
             <tr>
@@ -24,202 +24,199 @@
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
-            <tr>
-                <td style="color: darkblue">METODO</td>
-                <td colspan="3">
-                    Contador Hematologico MINDRAY BC 5130
-                    Hematocrito (Metodo Manual) Hemoglobina (Clanmetahemoglobina reactivo drabking)
-                </td>
-            </tr>
+{{--            <tr>--}}
+{{--                <td style="color: darkblue">METODO</td>--}}
+{{--                <td colspan="3">--}}
+{{--                    Contador Hematologico MINDRAY BC 5130--}}
+{{--                    Hematocrito (Metodo Manual) Hemoglobina (Clanmetahemoglobina reactivo drabking)--}}
+{{--                </td>--}}
+{{--            </tr>--}}
         </table>
         <table border="1" style="width: 100%;color: black">
-            <tr>
-                <td>EX. FISICO</td>
-                <td>VALOR</td>
-                <td>REFERENCIA</td>
-                <td>EX. QUIMICO</td>
-                <td>VALOR</td>
-                <td>REFERENCIA</td>
+            <tr class="bg-purpal text-white">
+                <th>PRUEBA</th>
+                <th>VALOR</th>
+                <th>REFERENCIA</th>
+                <th>METODO</th>
+                <th>PRUEBA</th>
+                <th>VALOR</th>
+                <th>VALOR</th>
+                <th>METODO</th>
             </tr>
             <tr>
-                <td>Globulos Rojos</td>
+                <td class="bg-red text-center text-white">Glicemia</td>
                 <td><input type="text" name="d1"  required style="width: 100%"></td>
-                <td>x10 <sup>12 </sup>/L</td>
-                <td>Varon 5.1-5.7x10 <sup>12</sup>/L <br> Mujer 4.8-5.4x10 <sup>12</sup>/L</td>
-                <td>Tiempo de cuagulacion</td>
+                <td>70-105mg/dl</td>
+                <td>Glucosa Oxidasa</td>
+                <td class="bg-red text-center text-white">Fosfatasa alcalina</td>
                 <td><input type="text" name="d2"  required style="width: 100%"></td>
-                <td>5-10 min</td>
+                <td>adultos hasta 100UI/L</td>
+                <td>Cinetico</td>
             </tr>
             <tr>
-                <td>Hemoglobina</td>
+                <td class="bg-red text-center text-white">Creatinina</td>
                 <td><input type="text" name="d3"  required style="width: 100%"></td>
-                <td>g/L</td>
-                <td>Varon 151-175 g/L <br> Mujer Mujer 141-165 g/L</td>
-                <td>Tiempo de sangria</td>
+                <td>0.7-1.5mg/dl</td>
+                <td>Picrato Alcalino</td>
+                <td class="bg-red text-center text-white">Fosfatasa alcalina</td>
                 <td><input type="text" name="d4"  required style="width: 100%"></td>
-                <td>1-3 min</td>
+                <td>niños 100-400UI/L</td>
+                <td>Cinetico</td>
             </tr>
             <tr>
-                <td>Hematocrito</td>
+                <td class="bg-red text-center text-white">Urea</td>
                 <td><input type="text" name="d5"  required style="width: 100%"></td>
-                <td>L/L</td>
-                <td>Varon 0.51-0.57 L/L <br> Mujer 0.46-0.53 L/L</td>
-                <td>Tiempo de Protrombina</td>
+                <td>15-45mg/dl</td>
+                <td>Enzimatico UV</td>
+                <td class="bg-red text-center text-white">Transamisas GOT</td>
                 <td><input type="text" name="d6"  required style="width: 100%"></td>
-                <td>12-13 seg</td>
+                <td>hasta 40UI/L</td>
+                <td>Cinetico</td>
             </tr>
             <tr>
-                <td>V.E.S.</td>
+                <td class="bg-red text-center text-white">NUS-BUN</td>
                 <td><input type="text" name="d7"  required style="width: 100%"></td>
-                <td>mm.</td>
-                <td>Varon 15 mm/hora <br> Mujer 20 mm/hora</td>
-                <td>% Actividad</td>
+                <td>7-18mg/dl</td>
+                <td>Cinetico UV</td>
+                <td class="bg-red text-center text-white">Transamisas GPT</td>
                 <td><input type="text" name="d8"  required style="width: 100%"></td>
-                <td>95-100%</td>
+                <td>hasta 41UI/L</td>
+                <td>Cinetico</td>
             </tr>
-
             <tr>
-                <td>V.C.M.</td>
+                <td class="bg-red text-center text-white">Acido Urico</td>
                 <td><input type="text" name="d9"  required style="width: 100%"></td>
-                <td>ft.</td>
-                <td>Varon 83.0-97.0 ft</td>
-                <td>INR</td>
-                <td><input type="text" name="d10" required  style="width: 100%"></td>
-                <td>0.97-1.04</td>
-            </tr>
-            <tr>
-                <td>Hb.C.M.</td>
-                <td><input type="text" name="d11" required  style="width: 100%"></td>
-                <td>pg.</td>
-                <td>27.0-31.0 pg.</td>
-                <td>Grupofactor</td>
-                <td colspan="2"><input type="text" name="d12" required  style="width: 100%"></td>
-            </tr>
-            <tr>
-                <td>C. Hb.C.M.</td>
-                <td><input type="text" name="d13" required  style="width: 100%"></td>
-                <td>%</td>
-                <td>32-36%</td>
-                <td>Reticulocitos</td>
-                <td><input type="text" name="d14" required  style="width: 100%"></td>
-                <td>0.5-2%</td>
-            </tr>
-            <tr>
-                <td>Globulos Blancos</td>
-                <td><input type="text" name="d15" required  style="width: 100%"></td>
-                <td>10 <sup>9</sup>/L</td>
-                <td> 4.5-10.5x10 <sup>9</sup>/L</td>
-                <td>IPR</td>
-                <td><input type="text" name="d16" required  style="width: 100%"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Plaquetas</td>
-                <td><input type="text" name="d17" required  style="width: 100%"></td>
-                <td>x10 <sup>9 </sup>/L</td>
-                <td>105-400x10 <sup>9</sup> /L</td>
-                <td colspan="3"></td>
-            </tr>
-        </table>
-        <table border="1" style="width: 100%;color: black">
-            <tr>
-                <td colspan="5"></td>
-                <td colspan="2">VALOR REFERENCIAL</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="2">RELATIVA</td>
-                <td colspan="2">ABSOLUTA</td>
-                <td>RELATIVA</td>
-                <td>ABSOLUTA</td>
-            </tr>
-            <tr>
-                <td>Cayados</td>
-                <td><input type="text" name="d18" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d19" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>0-3%</td>
-                <td>0.00-0.35x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>Neutrofilos</td>
-                <td><input type="text" name="d20" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d21" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>50-70%</td>
-                <td>2.50-7.35x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>Eosinofilos</td>
-                <td><input type="text" name="d22" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d23" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>0-3%</td>
-                <td>0.00-0.35x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>Basofilos</td>
-                <td><input type="text" name="d24" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d25" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>0-1%</td>
-                <td>0.00-0.15x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>Linfocitos</td>
-                <td><input type="text" name="d26" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d27" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>25-40%</td>
-                <td>1.25-4.200x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>Monocitos</td>
-                <td><input type="text" name="d28" required  style="width: 100%"></td>
-                <td>%</td>
-                <td><input type="text" name="d29" required  style="width: 100%"></td>
-                <td>x10 <sup>9</sup>/L</td>
-                <td>4-8%</td>
-                <td>2.00-8.40x10 <sup>9</sup>/L</td>
-            </tr>
-            <tr>
-                <td>BLASTOS</td>
-                <td><input type="text" name="d30" required  style="width: 100%"></td>
-                <td>%</td>
-                <td></td>
+                <td>2.6-7.2mg/dl</td>
+                <td>Uricasa/Peroxidasa</td>
+                <td class="bg-purpal text-center text-white">LIPIDOGRAMA</td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
-        </table>
-        <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="2">MORFOLOGIA DE FRONTIS DE SANGRE PERIFERICA</td>
+                <td class="bg-red text-center text-white">Proteinas Totales</td>
+                <td><input type="text" name="d10"  required style="width: 100%"></td>
+                <td>6.2-8.5g/dl</td>
+                <td>Biuret</td>
+                <td class="bg-red text-center text-white">Trigliceridos</td>
+                <td><input type="text" name="d11"  required style="width: 100%"></td>
+                <td>40-160mg/dl</td>
+                <td>GPO-PAP</td>
             </tr>
             <tr>
-                <td>Serie Rojas:</td>
-                <td><input type="text" name="d31" required  style="width: 100%"></td>
+                <td class="bg-red text-center text-white">Albumina</td>
+                <td><input type="text" name="d12"  required style="width: 100%"></td>
+                <td>3.5-5.3g/dl</td>
+                <td>Verde Bromocresol</td>
+                <td class="bg-red text-center text-white">Colesterol Total</td>
+                <td><input type="text" name="d13"  required style="width: 100%"></td>
+                <td>menor 200mg/dl</td>
+                <td>CHOD-PAP</td>
             </tr>
             <tr>
-                <td>Serie Blancas:</td>
-                <td><input type="text" name="d32" required  style="width: 100%"></td>
+                <td class="bg-red text-center text-white">Globulina</td>
+                <td><input type="text" name="d14"  required style="width: 100%"></td>
+                <td>2.8-3.5g/dl</td>
+                <td></td>
+                <td class="bg-red text-center text-white">HDL-Col.</td>
+                <td><input type="text" name="d15"  required style="width: 100%"></td>
+                <td>35-65mg/dl</td>
+                <td>CHOD-PAP</td>
             </tr>
             <tr>
-                <td>Serie Plaquetarias:</td>
-                <td><input type="text" name="d33" required  style="width: 100%"></td>
+                <td class="bg-red text-center text-white">Amilasa</td>
+                <td><input type="text" name="d16"  required style="width: 100%"></td>
+                <td>menor a 120 UI/L</td>
+                <td>Enzimatico a Amilasa</td>
+                <td class="bg-red text-center text-white">LDL-Col.</td>
+                <td><input type="text" name="d17"  required style="width: 100%"></td>
+                <td>Hasta 150mg/dl</td>
+                <td>CHOD-PAP</td>
             </tr>
             <tr>
-                <td>FECHA DE TOMA DE MUESTRA:</td>
-                <td><input type="date" name="fechatoma" required  style="width: 100%" value="{{date('Y-m-d')}}"></td>
+                <td class="bg-red text-center text-white">Lipasa</td>
+                <td><input type="text" name="d18"  required style="width: 100%"></td>
+                <td>10-150UI/L</td>
+                <td>Enzimatica Colorimetrica</td>
+                <td class="bg-purpal text-center text-white">ELECTROLITOS</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <button class="btn btn-success btn-block"><i class="fa fa-save"></i> REGISTRAR</button>
+                <td class="bg-red text-center text-white">Bilirrubina Total</td>
+                <td><input type="text" name="d19"  required style="width: 100%"></td>
+                <td>hasta 1.2 mg/dl</td>
+                <td rowspan="3">Acido Sulfanilico con Diaazo</td>
+                <td class="bg-red text-center text-white">Sodio</td>
+                <td><input type="text" name="d20"  required style="width: 100%"></td>
+                <td>135-155 mEq/L</td>
+                <td rowspan="4">Automatizado CORNLEY AFT-500</td>
+            </tr>
+            <tr>
+                <td class="bg-red text-center text-white">Bilirrubina Directa</td>
+                <td><input type="text" name="d21"  required style="width: 100%"></td>
+                <td>hasta 0.3 mg/dl</td>
+                <td class="bg-red text-center text-white">Cloro</td>
+                <td><input type="text" name="d22"  required style="width: 100%"></td>
+                <td>98-106 mEq/L</td>
+            </tr>
+            <tr>
+                <td class="bg-red text-center text-white">Bilirrubina Inderecta</td>
+                <td><input type="text" name="d23"  required style="width: 100%"></td>
+                <td>hasta 0.9 mg/dl</td>
+                <td class="bg-red text-center text-white">Potasio</td>
+                <td><input type="text" name="d24"  required style="width: 100%"></td>
+                <td>3.4-5.3 mEq/L</td>
+            </tr>
+            <tr>
+                <td class="bg-red text-center text-white">CK-MB</td>
+                <td><input type="text" name="d25"  required style="width: 100%"></td>
+                <td>0-24 UI/L</td>
+                <td>Enzimatico </td>
+                <td class="bg-red text-center text-white">Calcio</td>
+                <td><input type="text" name="d26"  required style="width: 100%"></td>
+                <td>8.5-10.5mg/dl</td>
+            </tr>
+            <tr>
+                <td class="bg-red text-center text-white">LDH</td>
+                <td><input type="text" name="d27"  required style="width: 100%"></td>
+                <td>200-480UI/L</td>
+                <td>Piruvato Lactato</td>
+                <td class="bg-red text-center text-white">Magnesio</td>
+                <td><input type="text" name="d28"  required style="width: 100%"></td>
+                <td>1.7-2.4mg/dl</td>
+                <td>Colorimetrico calmagita</td>
+            </tr>
+            <tr>
+                <td class="bg-red text-center text-white">Hierro</td>
+                <td><input type="text" name="d29"  required style="width: 100%"></td>
+                <td>50-170ug/dl</td>
+                <td>Goodwing Modificado</td>
+                <td class="bg-red text-center text-white">Fosforo</td>
+                <td><input type="text" name="d30"  required style="width: 100%"></td>
+                <td>2.5-4.5mg/dl</td>
+                <td>Fosfomolibdato UV</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bg-blue text-center text-white">OBSERVACIONES</td>
+                <td colspan="6"><input type="text" name="d31"  required style="width: 100%" ></td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2" class="bg-blue text-center text-white">RESPONSABLE</td>
+                <td colspan="2" rowspan="2">
+                    {{Auth::user()->name}}
+                </td>
+                <td colspan="3" class="bg-blue text-center text-white">FECHA TOMA DE MUESTRA</td>
+                <td><input type="date" name="d32"  required style="width: 100%" value="{{date('Y-m-d')}}"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="bg-blue text-center text-white">FECHA DE ENTREGA DE RESULTADO</td>
+                <td><input type="date" name="d33"  required style="width: 100%" value="{{date('Y-m-d')}}"></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <button type="submit" class="btn btn-success btn-block"><i class="fa fa-plus-circle"></i> GUARDAR</button>
                 </td>
             </tr>
         </table>

@@ -11,6 +11,7 @@
     <title>Laboratorios</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="stylesheet" href="">
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
@@ -20,6 +21,10 @@
     <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
 
@@ -844,9 +849,9 @@
 {{--                    </ul>--}}
                 </li>
                 <li>
-                    <a href="/buscar" class="ai-icon" aria-expanded="false">
+                    <a href="/historial" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-internet"></i>
-                        <span class="nav-text">Buscar</span>
+                        <span class="nav-text">Historial</span>
                     </a>
 {{--                    <ul aria-expanded="false">--}}
 {{--                        <li><a href="ui-accordion.html">Accordion</a></li>--}}

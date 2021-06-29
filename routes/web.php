@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/historial', function () {
+    return view('historia');
+});
 
 Auth::routes();
 
@@ -31,3 +34,4 @@ Route::post('/estado/{user}', [App\Http\Controllers\UserController::class, 'esta
 Route::apiResource('/paciente',\App\Http\Controllers\PacienteController::class)->middleware('auth');
 Route::apiResource('/hemograma',\App\Http\Controllers\HemogramaController::class)->middleware('auth');
 Route::apiResource('/orina',\App\Http\Controllers\OrinaController::class)->middleware('auth');
+Route::apiResource('/sanguinia',\App\Http\Controllers\SanguiniaController::class)->middleware('auth');

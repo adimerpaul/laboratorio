@@ -171,15 +171,19 @@
 {{--                                                    <label class="col-sm-3 col-form-label">Laboratorio</label>--}}
                                                     <div class="col-sm-12">
 {{--                                                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo">--}}
-                                                        <select name="laboratorio" style="color: black" class="form-control" id="lal">
+                                                        <select name="laboratorio" style="color: black" class="form-control" id="labo">
                                                             <option value="">Selecionar laboratorio...</option>
-                                                            <option value="hemograma">Hemograma completo</option>
+                                                            <option value="01">Hemograma completo</option>
+                                                            <option value="02">Quimica sanguinea</option>
+                                                            <option value="03">Examen general de orina</option>
+                                                            <option value="04">Analisis de secrecion uretral</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <x-f01></x-f01>
                                                 <x-f02></x-f02>
                                                 <x-f03></x-f03>
+                                                <x-f04></x-f04>
                                             </div>
                                         </div>
                                     </div>
@@ -193,8 +197,19 @@
     </div>
     <script>
         window.onload=function (){
-            $('#f01').hide();
-            $('#f02').hide();
+            $('#f01').hide('fast');
+            $('#f02').hide('fast');
+            $('#f03').hide('fast');
+            $('#f04').hide('fast');
+            $('#labo').change(function (){
+                // console.log($(this).val());
+                $('#f01').hide('fast');
+                $('#f02').hide('fast');
+                $('#f03').hide('fast');
+                $('#f04').hide('fast');
+                $('#f04').hide('fast');
+                $('#f'+$(this).val()).show('fast');
+            });
             $('body').on('click','.eliminar',function (e){
                 // console.log($(this).val());
                 // e.preventDefault();
