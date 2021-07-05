@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
-use App\Models\Hemograma;
-use App\Models\sanguinia;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class SanguiniaController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,24 +25,16 @@ class SanguiniaController extends Controller
      */
     public function store(Request $request)
     {
-//        return $request->requerido;
-        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
-            Doctor::create(['nombre'=>$request->requerido]);
-        }
-        $input=$request->all();
-        $input['user_id']=Auth::user()->id;
-        $input['fechatoma']=date('Y-m-d');
-        sanguinia::create($input);
-        return redirect('/pacientes');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\sanguinia  $sanguinia
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function show(sanguinia $sanguinia)
+    public function show(Doctor $doctor)
     {
         //
     }
@@ -54,10 +43,10 @@ class SanguiniaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\sanguinia  $sanguinia
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sanguinia $sanguinia)
+    public function update(Request $request, Doctor $doctor)
     {
         //
     }
@@ -65,10 +54,10 @@ class SanguiniaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\sanguinia  $sanguinia
+     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sanguinia $sanguinia)
+    public function destroy(Doctor $doctor)
     {
         //
     }

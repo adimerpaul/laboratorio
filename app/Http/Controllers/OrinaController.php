@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Orina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,10 @@ class OrinaController extends Controller
      */
     public function store(Request $request)
     {
+
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
         Orina::create($request->all()+ ['user_id' => Auth::user()->id]);
         return redirect('/pacientes');
     }
