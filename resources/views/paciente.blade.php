@@ -201,6 +201,14 @@
             $('#f02').hide('fast');
             $('#f03').hide('fast');
             $('#f04').hide('fast');
+            var doctor='';
+             @foreach($doctors as $doctor)
+                console.log('{{$doctor->nombre}}')
+                doctor=doctor+'<option>{{$doctor->nombre}}</option>'
+             @endforeach
+                 $('.doctors').html(doctor);
+
+
             $('#labo').change(function (){
                 // console.log($(this).val());
                 $('#f01').hide('fast');

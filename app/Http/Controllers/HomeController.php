@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Paciente;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -36,8 +37,9 @@ class HomeController extends Controller
     }
     public function paciente()
     {
+        $doctors=Doctor::all();
         $pacientes=Paciente::all();
-        return view('paciente',['pacientes'=>$pacientes]);
+        return view('paciente',['pacientes'=>$pacientes,'doctors'=>$doctors]);
     }
     public function buscar()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Hemograma;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,10 @@ class HemogramaController extends Controller
 //        $datos=$request->all();
 //        $datos->user_id=Auth::user()->id;
 ////        array_push($datos,array('user_id'=>1));
-//        return $datos;
+//        return $request->requerido;
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
         Hemograma::create($request->all()+ ['user_id' => Auth::user()->id]);
         return redirect('/pacientes');
     }
