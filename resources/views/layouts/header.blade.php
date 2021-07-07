@@ -875,10 +875,10 @@
 {{--                    </ul>--}}
                 </li>
                 <li>
-                    <a href="/reportes" class="ai-icon" aria-expanded="false">
+                    <a href="/reactivo" class="ai-icon" aria-expanded="false">
 <!--                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
                         <i class="flaticon-381-paperclip"></i>
-                        <span class="nav-text">Reportes</span>
+                        <span class="nav-text">Reactivos</span>
                     </a>
 {{--                    <ul aria-expanded="false">--}}
 {{--                        <li><a href="uc-select2.html">Select 2</a></li>--}}
@@ -890,6 +890,13 @@
 {{--                        <li><a href="uc-lightgallery.html">Lightgallery</a></li>--}}
 {{--                    </ul>--}}
                 </li>
+
+                <li>
+                    <a href="/caduca" class="ai-icon" aria-expanded="false">
+                        <i class="flaticon-381-settings-2"></i>
+                        <span class="nav-text">Por caducar</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}" class="ai-icon" aria-expanded="false"
                        onclick="event.preventDefault();
@@ -897,22 +904,16 @@
                         <i class="flaticon-381-close"></i>
                         <span class="nav-text">Salir</span>
                     </a>
-{{--                                                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
-{{--                                                       onclick="event.preventDefault();--}}
-{{--                                                                         document.getElementById('logout-form').submit();">--}}
-{{--                                                        {{ __('Logout') }}--}}
-{{--                                                    </a>--}}
+                    {{--                                                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
+                    {{--                                                       onclick="event.preventDefault();--}}
+                    {{--                                                                         document.getElementById('logout-form').submit();">--}}
+                    {{--                                                        {{ __('Logout') }}--}}
+                    {{--                                                    </a>--}}
 
-{{--                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                        @csrf--}}
-{{--                    </form>--}}
+                    {{--                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+                    {{--                        @csrf--}}
+                    {{--                    </form>--}}
                 </li>
-{{--                <li>--}}
-{{--                    <a href="widget-basic.html" class="ai-icon" aria-expanded="false">--}}
-{{--                        <i class="flaticon-381-settings-2"></i>--}}
-{{--                        <span class="nav-text">Widget</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
 {{--                <li>--}}
 {{--                    <a href="widget-basic.html" class="ai-icon" aria-expanded="false">--}}
 {{--                        <i class="flaticon-381-settings-2"></i>--}}

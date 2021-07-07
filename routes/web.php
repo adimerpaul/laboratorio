@@ -35,3 +35,5 @@ Route::apiResource('/paciente',\App\Http\Controllers\PacienteController::class)-
 Route::apiResource('/hemograma',\App\Http\Controllers\HemogramaController::class)->middleware('auth');
 Route::apiResource('/orina',\App\Http\Controllers\OrinaController::class)->middleware('auth');
 Route::apiResource('/sanguinia',\App\Http\Controllers\SanguiniaController::class)->middleware('auth');
+Route::apiResource('/reactivo',\App\Http\Controllers\ReactivoController::class)->middleware('auth');
+Route::get('/caduca',[\App\Http\Controllers\ReactivoController::class,'caduca'])->middleware('auth');
