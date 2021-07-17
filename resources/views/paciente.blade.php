@@ -177,6 +177,10 @@
                                                             <option value="02">Quimica sanguinea</option>
                                                             <option value="03">Examen general de orina</option>
                                                             <option value="04">Analisis de secrecion uretral</option>
+                                                            <option value="05">Analisis de secrecion Vaginal</option>
+                                                            <option value="06">Analisis de Heces</option>
+                                                            <option value="07">Copraparasitologico Simple</option>
+                                                            <option value="08">Copraparasitologico Seriado</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -184,6 +188,10 @@
                                                 <x-f02></x-f02>
                                                 <x-f03></x-f03>
                                                 <x-f04></x-f04>
+                                                <x-f05></x-f05>
+                                                <x-f06></x-f06>
+                                                <x-f07></x-f07>
+                                                <x-f08></x-f08>
                                             </div>
                                         </div>
                                     </div>
@@ -201,6 +209,10 @@
             $('#f02').hide('fast');
             $('#f03').hide('fast');
             $('#f04').hide('fast');
+            $('#f05').hide('fast');
+            $('#f06').hide('fast');
+            $('#f07').hide('fast');
+            $('#f08').hide('fast');
             var doctor='';
              @foreach($doctors as $doctor)
                 console.log('{{$doctor->nombre}}')
@@ -215,7 +227,10 @@
                 $('#f02').hide('fast');
                 $('#f03').hide('fast');
                 $('#f04').hide('fast');
-                $('#f04').hide('fast');
+                $('#f05').hide('fast');
+                $('#f06').hide('fast');
+                $('#f07').hide('fast');
+                $('#f08').hide('fast');
                 $('#f'+$(this).val()).show('fast');
             });
             $('body').on('click','.eliminar',function (e){

@@ -1,9 +1,9 @@
-<div id="f04">
-    <form method="post" action="/hemograma" >
+<div id="f07">
+    <form method="post" action="/simple" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="3" style="text-align: center"><h3>ANALISIS DE SECRECION URETRAL</h3></td>
+                <td colspan="3" style="text-align: center"><h3>COPRAPARASITOLOGICO SIMPLE</h3></td>
                 <td>Form. 001</td>
             </tr>
             <tr>
@@ -24,85 +24,89 @@
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
- 
+
         </table>
+            <br>
         <table border="1" style="width: 100%;color: black">
-            <tr>
-                <td colspan="2" style="text-align: center ">EXAMEN EN FRESCO</td>
+            <tr >
+                <td colspan="2" style="text-align: center ">COPRAPARASITOLOGICO SIMPLE</td>
             </tr>
             <tr>
-                <td class="text-left text-red">CELULAS EPITELIALES</td>
+                <td class="text-left text-red">ASPECTO DE LA MUESTRA</td>
                 <td ><input type="text"  style="width: 100%" name="d1"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">LEUCOCITOS</td>
+                <td class="text-left text-red">COLOR</td>
                 <td ><input type="text"  style="width: 100%" name="d2"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">HEMATIES</td>
+                <td class="text-left text-red">CELULAS EPITELIALES</td>
                 <td ><input type="text"  style="width: 100%" name="d3"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">CELULAS CLAVE</td>
+                <td class="text-left text-red">LEUCOCITOS</td>
                 <td ><input type="text"  style="width: 100%" name="d4"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">LEVADURAS</td>
+                <td class="text-left text-red">HEMATIES</td>
                 <td ><input type="text"  style="width: 100%" name="d5"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">PARASITOS</td>
+                <td class="text-left text-red">GRASAS</td>
                 <td ><input type="text"  style="width: 100%" name="d6"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">BACTERIAS</td>
+                <td class="text-left text-red">LEVADURAS</td>
                 <td ><input type="text"  style="width: 100%" name="d7"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">KOH</td>
+                <td class="text-left text-red">ESPORAS MICOTICAS</td>
                 <td ><input type="text"  style="width: 100%" name="d8"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">PH</td>
+                <td class="text-left text-red">ALMIDON</td>
                 <td ><input type="text"  style="width: 100%" name="d9"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">OBSERVACIONES</td>
+                <td class="text-left text-red">PARASITOS</td>
                 <td ><input type="text"  style="width: 100%" name="d10"></td>
+            </tr>
+            <tr>
+                <td class="text-left text-red">PIOCITOS</td>
+                <td ><input type="text"  style="width: 100%" name="d11"></td>
+            </tr>
+
+            <tr>
+                <td rowspan="2" class="text-left text-red">MOCO FECAL
+                 <input type="text"  style="width: 100%"  name="d12">               </td>
+                <td> Polimorfonucleares<input type="text" style="width: 100%"   name="d13"></td>
+
+            </tr>
+            <tr>
+                <td>Mononucleares<input type="text" style="width: 100%"  name="d14"></td>
+                
+            </tr>
+            <tr>
+                <td class="text-left text-red">OBSERVACIONES</td>
+                <td ><input type="text"  style="width: 100%" name="d15"></td>
             </tr>
 
             <tr colspan="2">
-                <td colspan="2" class="text-center">TINCION DE GRAM</td>
+                <td colspan="2" class="text-center">OTROS</td>
             </tr>
             <tr>
-                <td class="text-left text-red">BACILOS GRAM POSITIVO</td>
-                <td ><input type="text"  style="width: 100%" name="d11"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">BACILOS GRAM NEGATIVO</td>
-                <td ><input type="text"  style="width: 100%" name="d12"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">COCOS GRAM POSITIVO</td>
-                <td ><input type="text"  style="width: 100%" name="d13"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">COCOBACILOS GRAM POSITIVO</td>
-                <td ><input type="text"  style="width: 100%" name="d14"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">COCOBACILOS GRAM NEGATIVO</td>
-                <td ><input type="text"  style="width: 100%" name="d15"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">ESPORAS E HIFAS MICOTICAS</td>
+                <td class="text-left text-red">SANGRE OCULTA EN HECES</td>
                 <td ><input type="text"  style="width: 100%" name="d16"></td>
             </tr>
             <tr>
-                <td class="text-left text-red">OBSERVACIONES</td>
+                <td class="text-left text-red">TEST DE BENEDICT</td>
                 <td ><input type="text"  style="width: 100%" name="d17"></td>
+            </tr>  
+  
+            <tr>
+                <td class="text-left text-red">OBSERVACIONES</td>
+                <td ><input type="text"  style="width: 100%" name="d18"></td>
             </tr>
-
 
             <tr>
                 <td rowspan="2" >RESPONSABLE: {{Auth::user()->name}}</td>

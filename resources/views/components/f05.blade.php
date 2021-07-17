@@ -1,9 +1,9 @@
-<div id="f04">
-    <form method="post" action="/hemograma" >
+<div id="f05">
+    <form method="post" action="/vaginal" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="3" style="text-align: center"><h3>ANALISIS DE SECRECION URETRAL</h3></td>
+                <td colspan="3" style="text-align: center"><h3>ANALISIS DE SECRECION VAGINAL</h3></td>
                 <td>Form. 001</td>
             </tr>
             <tr>
@@ -24,7 +24,7 @@
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
- 
+
         </table>
         <table border="1" style="width: 100%;color: black">
             <tr>
@@ -102,7 +102,6 @@
                 <td class="text-left text-red">OBSERVACIONES</td>
                 <td ><input type="text"  style="width: 100%" name="d17"></td>
             </tr>
-
 
             <tr>
                 <td rowspan="2" >RESPONSABLE: {{Auth::user()->name}}</td>

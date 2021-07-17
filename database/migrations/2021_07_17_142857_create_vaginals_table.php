@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUretralsTable extends Migration
+class CreateVaginalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUretralsTable extends Migration
      */
     public function up()
     {
-        Schema::create('uretrals', function (Blueprint $table) {
+        Schema::create('vaginals', function (Blueprint $table) {
             $table->id();
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
@@ -51,6 +51,6 @@ class CreateUretralsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uretrals');
+        Schema::dropIfExists('vaginals');
     }
 }

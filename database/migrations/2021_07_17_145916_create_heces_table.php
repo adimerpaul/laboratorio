@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUretralsTable extends Migration
+class CreateHecesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUretralsTable extends Migration
      */
     public function up()
     {
-        Schema::create('uretrals', function (Blueprint $table) {
+        Schema::create('heces', function (Blueprint $table) {
             $table->id();
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
@@ -36,6 +36,9 @@ class CreateUretralsTable extends Migration
             $table->string('d15')->default('')->nullable();
             $table->string('d16')->default('')->nullable();
             $table->string('d17')->default('')->nullable();
+            $table->string('d18')->default('')->nullable();
+            $table->string('d19')->default('')->nullable();
+            $table->string('d20')->default('')->nullable();
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->unsignedBigInteger('user_id');
@@ -51,6 +54,6 @@ class CreateUretralsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uretrals');
+        Schema::dropIfExists('heces');
     }
 }
