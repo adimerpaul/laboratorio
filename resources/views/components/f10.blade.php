@@ -14,13 +14,13 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" ></td>
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>
             <tr>
                 <td style="color: darkblue">TIPO MUESTRA</td>
-                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" required></td>
+                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" ></td>
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>

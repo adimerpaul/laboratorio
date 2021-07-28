@@ -26,6 +26,7 @@ class simple extends Model
         'd12',
         'd13',
         'd14',
+        'd15',
         'd16',
         'd17',
         'd18',

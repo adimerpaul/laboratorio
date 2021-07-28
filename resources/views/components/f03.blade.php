@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required list="doctors"></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por"  list="doctors"></td>
                 <datalist id="doctors" class="doctors">
                 </datalist>
                 <td style="color: darkblue">SEXO</td>
@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td style="color: darkblue">TIPO MUESTRA</td>
-                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" required ></td>
+                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra"  ></td>
 
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>

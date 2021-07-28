@@ -18,7 +18,6 @@ class CreateSerologiasTable extends Migration
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
             $table->date('fechatoma')->nullable();
-            $table->date('fechaentrega')->nullable();
             $table->double('lgm')->default(0)->nullable();
             $table->string('d1')->default('')->nullable();
             $table->double('lgg')->default(0)->nullable();

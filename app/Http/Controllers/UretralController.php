@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Uretral;
 use Illuminate\Http\Request;
-
+use App\Models\Doctor;
+use Illuminate\Support\Facades\Auth;
 class UretralController extends Controller
 {
     /**
@@ -26,6 +27,14 @@ class UretralController extends Controller
     public function store(Request $request)
     {
         //
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
+        $input=$request->all();
+        $input['user_id']=Auth::user()->id;
+        $input['fechatoma']=date('Y-m-d');
+        uretral::create($input);
+        return redirect('/pacientes');
     }
 
     /**

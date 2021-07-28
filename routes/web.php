@@ -34,13 +34,14 @@ Route::post('/estado/{user}', [App\Http\Controllers\UserController::class, 'esta
 Route::apiResource('/paciente',\App\Http\Controllers\PacienteController::class)->middleware('auth');
 Route::apiResource('/hemograma',\App\Http\Controllers\HemogramaController::class)->middleware('auth');
 Route::apiResource('/orina',\App\Http\Controllers\OrinaController::class)->middleware('auth');
+Route::apiResource('/uretral',\App\Http\Controllers\UretralController::class)->middleware('auth');
 Route::apiResource('/sanguinia',\App\Http\Controllers\SanguiniaController::class)->middleware('auth');
 Route::apiResource('/reactivo',\App\Http\Controllers\ReactivoController::class)->middleware('auth');
 Route::apiResource('/vaginal',\App\Http\Controllers\VaginalController::class)->middleware('auth');
 Route::apiResource('/hece',\App\Http\Controllers\HeceController::class)->middleware('auth');
 Route::apiResource('/simple',\App\Http\Controllers\SimpleController::class)->middleware('auth');
 Route::apiResource('/seriado',\App\Http\Controllers\SeriadoController::class)->middleware('auth');
-Route::apiResource('/seriologia',\App\Http\Controllers\SerologiaController ::class)->middleware('auth');
-Route::apiResource('/labseriologia',\App\Http\Controllers\LabserologiaController ::class)->middleware('auth');
-Route::apiResource('/reseriologia',\App\Http\Controllers\ReserologiaController ::class)->middleware('auth');
+Route::apiResource('/serologia',\App\Http\Controllers\SerologiaController ::class)->middleware('auth');
+Route::apiResource('/labserologia',\App\Http\Controllers\LabserologiaController ::class)->middleware('auth');
+Route::apiResource('/reserologia',\App\Http\Controllers\ReserologiaController ::class)->middleware('auth');
 Route::get('/caduca',[\App\Http\Controllers\ReactivoController::class,'caduca'])->middleware('auth');

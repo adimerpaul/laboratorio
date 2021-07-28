@@ -25,6 +25,10 @@ class Uretral extends Model
         'd11',
         'd12',
         'd13',
+        'd14',
+        'd15',
+        'd16',
+        'd17',
         'paciente_id',
         'user_id',
     ];

@@ -19,7 +19,6 @@ class CreateSimplesTable extends Migration
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
             $table->date('fechatoma')->nullable();
-            $table->date('fechaentrega')->nullable();
             $table->string('d1')->default('')->nullable();
             $table->string('d2')->default('')->nullable();
             $table->string('d3')->default('')->nullable();

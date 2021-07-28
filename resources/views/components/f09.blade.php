@@ -14,13 +14,13 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" ></td>
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>
             <tr>
                 <td style="color: darkblue">TIPO MUESTRA</td>
-                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" required></td>
+                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" ></td>
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
@@ -47,13 +47,13 @@
                 <td class="text-center text-red" style="width: 20%">lgG</td>
                 <td ><input  type="number" step="0.1" value="0.0"  style="width: 100%" name="lgg" min="0.0"></td>
                 <td ><input  type="text"  readonly  style="width: 100%" name="d2"></td>
-                <td> >= 1.1 POSITIVO lgG/lgM</td>
+                <td style="width: 20%"> >= 1.1 POSITIVO lgG/lgM</td>
             </tr>
 
 
             <tr>
                 <td class="text-left text-red">OBSERVACIONES</td>
-                <td colspan="3" ><input type="text"  style="width: 100%" name="observaciones"></td>
+                <td colspan="3" ><input type="text"  style="width: 100%" name="d3"></td>
             </tr>
 
             <tr >

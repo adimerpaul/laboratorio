@@ -14,13 +14,13 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" ></td>
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>
             <tr>
                 <td style="color: darkblue">TIPO MUESTRA</td>
-                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" required></td>
+                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" ></td>
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
@@ -42,14 +42,14 @@
             </tr>
             <tr>
                 <td class="text-center text-red" style="width: 20%"></td>
-                <td class="text-center text-red" style="width: 100%">ANTIGENO SARS COV2</td>
-                <td ><input  type="text"  readonly  style="width: 20%" name="d1"></td>
+                <td class="text-center text-red" style="width: 20%">ANTIGENO SARS COV2</td>
+                <td ><input  type="text"  readonly  style="width: 50%" name="d1"></td>
                 <td class="text-center text-red" style="width: 20%"></td>
             </tr>
 
             <tr>
                 <td class="text-left text-red">OBSERVACIONES</td>
-                <td colspan="3" ><input type="text"  style="width: 100%" name="observaciones"></td>
+                <td colspan="3" ><input type="text"  style="width: 100%" name="d2"></td>
             </tr>
 
             <tr >

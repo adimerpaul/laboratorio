@@ -12,10 +12,11 @@ class Serologia extends Model
         'requerido',
         'tipomuestra',
         'fechatoma',
+        'lgm',
         'd1',
+        'lgg',
         'd2',
         'd3',
-        'd4',
         'paciente_id',
         'user_id',
         

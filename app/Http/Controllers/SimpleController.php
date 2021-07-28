@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\simple;
 use Illuminate\Http\Request;
-
+use App\Models\Doctor;
+use Illuminate\Support\Facades\Auth;
 class SimpleController extends Controller
 {
     /**
@@ -36,6 +37,14 @@ class SimpleController extends Controller
     public function store(Request $request)
     {
         //
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
+        $input=$request->all();
+        $input['user_id']=Auth::user()->id;
+        $input['fechatoma']=date('Y-m-d');
+        simple::create($input);
+        return redirect('/pacientes');
     }
 
     /**

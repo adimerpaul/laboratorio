@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Labserologia;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Doctor;
 class LabserologiaController extends Controller
 {
     /**
@@ -36,6 +37,13 @@ class LabserologiaController extends Controller
     public function store(Request $request)
     {
         //
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
+        $input=$request->all();
+        $input['user_id']=Auth::user()->id;
+        labserologia::create($input);
+        return redirect('/pacientes');
     }
 
     /**
