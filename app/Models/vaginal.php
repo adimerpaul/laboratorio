@@ -11,8 +11,6 @@ class vaginal extends Model
     protected $fillable=[
         'requerido',
         'tipomuestra',
-        'fechatoma',
-        'fechaentrega',
         'd1',
         'd2',
         'd3',

@@ -181,6 +181,9 @@
                                                             <option value="06">Analisis de Heces</option>
                                                             <option value="07">Copraparasitologico Simple</option>
                                                             <option value="08">Copraparasitologico Seriado</option>
+                                                            <option value="09">Serologia</option>
+                                                            <option value="10">Lab Serologia</option>
+                                                            <option value="11">Res Serologia</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -192,6 +195,9 @@
                                                 <x-f06></x-f06>
                                                 <x-f07></x-f07>
                                                 <x-f08></x-f08>
+                                                <x-f09></x-f09>
+                                                <x-f10></x-f10>
+                                                <x-f11></x-f11>
                                             </div>
                                         </div>
                                     </div>
@@ -213,6 +219,9 @@
             $('#f06').hide('fast');
             $('#f07').hide('fast');
             $('#f08').hide('fast');
+            $('#f09').hide('fast');
+            $('#f10').hide('fast');
+            $('#f11').hide('fast');
             var doctor='';
              @foreach($doctors as $doctor)
                 console.log('{{$doctor->nombre}}')
@@ -231,6 +240,9 @@
                 $('#f06').hide('fast');
                 $('#f07').hide('fast');
                 $('#f08').hide('fast');
+                $('#f09').hide('fast');
+                $('#f10').hide('fast');
+                $('#f11').hide('fast');
                 $('#f'+$(this).val()).show('fast');
             });
             $('body').on('click','.eliminar',function (e){

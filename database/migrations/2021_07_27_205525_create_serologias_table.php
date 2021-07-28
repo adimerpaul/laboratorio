@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeriadosTable extends Migration
+class CreateSerologiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,17 @@ class CreateSeriadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('seriados', function (Blueprint $table) {
+        Schema::create('serologias', function (Blueprint $table) {
             $table->id();
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
             $table->date('fechatoma')->nullable();
             $table->date('fechaentrega')->nullable();
-            $table->string('muestra1')->default('')->nullable();
-            $table->date('fecha1')->nullable();
-            $table->time('hora1')->nullable();
+            $table->double('lgm')->default('')->nullable();
             $table->string('d1')->default('')->nullable();
-            $table->date('fecha2')->nullable();
-            $table->time('hora2')->nullable();
+            $table->double('lgg')->default('')->nullable();
             $table->string('d2')->default('')->nullable();
-            $table->date('fecha3')->nullable();
-            $table->time('hora3')->nullable();
             $table->string('d3')->default('')->nullable();
-            $table->string('observaciones')->default('')->nullable();
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->unsignedBigInteger('user_id');
@@ -45,6 +39,6 @@ class CreateSeriadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seriados');
+        Schema::dropIfExists('serologias');
     }
 }

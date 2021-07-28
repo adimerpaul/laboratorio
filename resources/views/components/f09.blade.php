@@ -1,9 +1,9 @@
-<div id="f08">
+<div id="f09">
     <form method="post" action="/seriado" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="3" style="text-align: center"><h3>COPROPARASITOLOGICO SERIADO</h3></td>
+                <td colspan="3" style="text-align: center"><h3>SEROLOGIA</h3></td>
                 <td>Form. 001</td>
             </tr>
             <tr>
@@ -29,47 +29,31 @@
         <br>
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="3" style="text-align: center ">COPROPARASITOLOGICO SERIADO</td>
+                <td colspan="4" style="text-align: center ">PRUEBA ANTICUERPOS CUANTITATIVOS ANTI SARS COV-2 lg M / lg G</td>
             </tr>
             <tr>
-                <td colspan="2" class="text-center text-red" style="width: 20%">1 MUESTRA</td>
-                <td ><input  type="text"  style="width: 100%" name="muestra1"></td>
+                <td class="text-center text-red" style="width: 20%">lgM</td>
+                <td ><input  type="number" step="0.1" value="0.0"  style="width: 100%" name="lgm" min="0.0"></td>
+                <td ><input  type="text"  readonly  style="width: 100%" name="d1"></td>
+                <td> < 0.9 NEGATIVO PARA lgG/lgM</td>
             </tr>
             <tr>
-                <td class="text-left text-red">Fecha</td>
-                <td ><input type="date"  style="width: 100%" name="fecha1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>0.9 <= & < 1.1 INDETERMINADO </td>
             </tr>
             <tr>
-                <td class="text-left text-red">Hora</td>
-                <td ><input type="time"  style="width: 100%" name="hora1"></td>
+                <td class="text-center text-red" style="width: 20%">lgG</td>
+                <td ><input  type="number" step="0.1" value="0.0"  style="width: 100%" name="lgg" min="0.0"></td>
+                <td ><input  type="text"  readonly  style="width: 100%" name="d2"></td>
+                <td> >= 1.1 POSITIVO lgG/lgM</td>
             </tr>
+
+
             <tr>
-                <td colspan="2" class="text-center text-red" style="width: 20%">2 MUESTRA</td>
-                <td ><input type="text"  style="width: 100%" name="muestra2"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">Fecha</td>
-                <td ><input type="date"  style="width: 100%" name="fecha2"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">Hora</td>
-                <td ><input type="time"  style="width: 100%" name="hora2"></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="text-center text-red" style="width: 20%">3 MUESTRA</td>
-                <td ><input type="text"  style="width: 100%" name="muestra3"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">Fecha</td>
-                <td ><input type="date"  style="width: 100%" name="fecha3"></td>
-            </tr>
-            <tr>
-                <td class="text-left text-red">Hora</td>
-                <td ><input type="time"  style="width: 100%" name="hora3"></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="text-left text-red">OBSERVACIONES</td>
-                <td ><input type="text"  style="width: 100%" name="observaciones"></td>
+                <td class="text-left text-red">OBSERVACIONES</td>
+                <td colspan="3" ><input type="text"  style="width: 100%" name="observaciones"></td>
             </tr>
 
             <tr >
