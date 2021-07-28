@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\seriado;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class SeriadoController extends Controller
@@ -36,6 +38,13 @@ class SeriadoController extends Controller
     public function store(Request $request)
     {
         //
+        if (Doctor::where('nombre',$request->requerido)->get()->count()==0 && $request->requerido!=''){
+            Doctor::create(['nombre'=>$request->requerido]);
+        }
+        $input=$request->all();
+        $input['user_id']=Auth::user()->id;
+        seriado::create($input);
+        return redirect('/pacientes');
     }
 
     /**

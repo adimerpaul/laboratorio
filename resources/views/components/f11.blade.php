@@ -1,5 +1,5 @@
 <div id="f11">
-    <form method="post" action="/seriado" >
+    <form method="post" action="/reserologia" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
@@ -29,7 +29,7 @@
         <br>
         <table border="1" style="width: 100%;color: black">
             <tr>
-                <td colspan="4" style="text-align: center color:red">PRUEBA RAPIDA ANTIGENOS SARS COV 4</td>
+                <td colspan="4" style="text-align: center color:red">PRUEBA RAPIDA ANTIGENOS SARS COV 2</td>
             </tr>
             <tr>
                 <td colspan="4" style="text-align: center "></td>

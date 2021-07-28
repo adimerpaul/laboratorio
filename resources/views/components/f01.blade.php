@@ -219,7 +219,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button class="btn btn-success btn-block"><i class="fa fa-save"></i> REGISTRAR</button>
+                    <button class="btn btn-success btn-block" type="submit"><i class="fa fa-save"></i> REGISTRAR</button>
                 </td>
             </tr>
         </table>

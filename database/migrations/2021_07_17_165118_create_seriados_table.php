@@ -17,15 +17,15 @@ class CreateSeriadosTable extends Migration
             $table->id();
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
-            $table->date('fechatoma')->nullable();
-            $table->date('fechaentrega')->nullable();
             $table->string('muestra1')->default('')->nullable();
             $table->date('fecha1')->nullable();
             $table->time('hora1')->nullable();
             $table->string('d1')->default('')->nullable();
+            $table->string('muestra2')->default('')->nullable();
             $table->date('fecha2')->nullable();
             $table->time('hora2')->nullable();
             $table->string('d2')->default('')->nullable();
+            $table->string('muestra3')->default('')->nullable();
             $table->date('fecha3')->nullable();
             $table->time('hora3')->nullable();
             $table->string('d3')->default('')->nullable();

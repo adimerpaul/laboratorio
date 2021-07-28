@@ -14,13 +14,15 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" list="doctors"></td>
+                <datalist id="doctors" class="doctors">
+                </datalist>
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>
             <tr>
                 <td style="color: darkblue">TIPO MUESTRA</td>
-                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" required></td>
+                <td><input type="text" style="width: 100%" name="tipomuestra" placeholder="Tipo muestra" ></td>
                 <td style="color: darkblue">N PACIENTE</td>
                 <td><label class="txtn"></label> <input type="hidden" class="paciente_id" name="paciente_id"></td>
             </tr>
@@ -73,20 +75,13 @@
             </tr>
 
             <tr >
-                <td colspan="2" rowspan="2" >RESPONSABLE: {{Auth::user()->name}}</td>
+                <td colspan="2" >RESPONSABLE: {{Auth::user()->name}}</td>
 {{--                <td colspan="2" rowspan="4">{{Auth::user()->name}}</td>--}}
                 <td>
-                    FECHA DE TOMA DE MUESTRAS
-                    <input placeholder="00" type="date" value="{{date('Y-m-d')}}"  style="width: 100%" name="fechatoma">
+                    FECHA DE ENTREGA RESULTADOS
+                    <input type="date" value="{{date('Y-m-d')}}"  style="width: 100%">
                 </td>
             </tr>
-            <tr>
-{{--                <td colspan="2">FECHA DE ENTREGA DE MUESTRAS</td>--}}
-{{--                <td>{{date('Y-m-d')}}</td>--}}
-                <td>
-                    FECHA DE ENTREGA DE MUESTRAS
-                    <input placeholder="00" type="date" value="{{date('Y-m-d')}}"  style="width: 100%" name="fechaentrega">
-                </td>
             </tr>
             <tr>
                 <td colspan="6">

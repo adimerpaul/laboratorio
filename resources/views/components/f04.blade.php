@@ -1,5 +1,5 @@
 <div id="f04">
-    <form method="post" action="/hemograma" >
+    <form method="post" action="/uretral" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>
@@ -14,7 +14,9 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required></td>
+                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" required list="doctors"></td>
+                <datalist id="doctors" class="doctors">
+                </datalist>
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>

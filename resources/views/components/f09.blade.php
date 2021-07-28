@@ -1,5 +1,5 @@
 <div id="f09">
-    <form method="post" action="/seriado" >
+    <form method="post" action="/serologia" >
         @csrf
         <table border="1" style="width: 100%;color: black">
             <tr>

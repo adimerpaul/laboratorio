@@ -12,7 +12,6 @@ class hece extends Model
         'requerido',
         'tipomuestra',
         'fechatoma',
-        'fechaentrega',
         'd1',
         'd2',
         'd3',
