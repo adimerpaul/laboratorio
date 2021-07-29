@@ -37,79 +37,79 @@
             <tr>
                 <td class="text-left text-red" style="width: 20%">Factor Reumatoide(Latex)</td>
                 <td ><input  type="text"  name="d1" ></td>
-                <td class="text-center text-yellow">Hasta 8 UI/ml</td>
+                <td class="text-center text-blue">Hasta 8 UI/ml</td>
                 <td class="text-center text-blue">Aglutinacion directa</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Antiestreptolisina</td>
                 <td ><input  type="text"  name="d2" ></td>
-                <td class="text-center text-yellow">Hasta 200 UI/l</td>
+                <td class="text-center text-blue">Hasta 200 UI/l</td>
                 <td class="text-center text-blue">Aglutinacion directa</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Proteina C Reactiva</td>
                 <td ><input  type="text"  name="d3" ></td>
-                <td class="text-center text-yellow">Hasta 0.8 mg/dl</td>
+                <td class="text-center text-blue">Hasta 0.8 mg/dl</td>
                 <td class="text-center text-blue">Aglutinacion directa</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">RPR</td>
                 <td ><input  type="text"  name="d4" ></td>
-                <td class="text-center text-yellow">No Reactivo</td>
+                <td class="text-center text-blue">No Reactivo</td>
                 <td class="text-center text-blue">Floculacion directa </td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Prueba Rapida Sifilis</td>
                 <td ><input  type="text"  name="d5" ></td>
-                <td class="text-center text-yellow">No Reactivo</td>
+                <td class="text-center text-blue">No Reactivo</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Prueba Rapida VIH</td>
                 <td ><input  type="text"  name="d6" ></td>
-                <td class="text-center text-yellow">No Reactivo</td>
+                <td class="text-center text-blue">No Reactivo</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Hepatitis A</td>
                 <td ><input  type="text"  name="d7" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Hepatitis B</td>
                 <td ><input  type="text"  name="d8" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Hepatitis C</td>
                 <td ><input  type="text"  name="d9" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Helicobacter Pylori en Sangre</td>
                 <td ><input  type="text"  name="d10" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Helicobacter Pylori en Heces</td>
                 <td ><input  type="text"  name="d11" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">Troponina I</td>
                 <td ><input  type="text"  name="d12" ></td>
-                <td class="text-center text-yellow">NEGATIVO / POSITIVO</td>
+                <td class="text-center text-blue">NEGATIVO / POSITIVO</td>
                 <td class="text-center text-blue">Prueba Rapida Inmunocromatografica</td>
             </tr>
             <tr>
                 <td class="text-left text-red" style="width: 20%">PSA</td>
                 <td ><input  type="text"  name="d13" ></td>
-                <td class="text-center text-yellow">Hasta 4 ng/ml</td>
+                <td class="text-center text-blue">Hasta 4 ng/ml</td>
                 <td class="text-center text-blue">Prueba Rapida Semicuantitativo</td>
             </tr>
 

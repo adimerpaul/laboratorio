@@ -4,7 +4,7 @@
         <table border="1" style="width: 100%;color: black">
             <tr>
                 <td colspan="3" style="text-align: center"><h3>COPROPARASITOLOGICO SERIADO</h3></td>
-                <td>Form. 001</td>
+                <td>Form. 008</td>
             </tr>
             <tr>
                 <td style="color: darkblue">PACIENTE</td>

@@ -44,4 +44,5 @@ Route::apiResource('/seriado',\App\Http\Controllers\SeriadoController::class)->m
 Route::apiResource('/serologia',\App\Http\Controllers\SerologiaController ::class)->middleware('auth');
 Route::apiResource('/labserologia',\App\Http\Controllers\LabserologiaController ::class)->middleware('auth');
 Route::apiResource('/reserologia',\App\Http\Controllers\ReserologiaController ::class)->middleware('auth');
+Route::apiResource('/ensayo',\App\Http\Controllers\EnsayoController ::class)->middleware('auth');
 Route::get('/caduca',[\App\Http\Controllers\ReactivoController::class,'caduca'])->middleware('auth');

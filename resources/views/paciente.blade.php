@@ -182,8 +182,9 @@
                                                             <option value="07">Copraparasitologico Simple</option>
                                                             <option value="08">Copraparasitologico Seriado</option>
                                                             <option value="09">Serologia</option>
-                                                            <option value="10">Lab Serologia</option>
-                                                            <option value="11">Res Serologia</option>
+                                                            <option value="10">Laboratorio Serologia</option>
+                                                            <option value="11">Resultado Serologia</option>
+                                                            <option value="12">Inmunoensayo de Fluorescencia</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -198,6 +199,7 @@
                                                 <x-f09></x-f09>
                                                 <x-f10></x-f10>
                                                 <x-f11></x-f11>
+                                                <x-f12></x-f12>
                                             </div>
                                         </div>
                                     </div>
@@ -222,6 +224,7 @@
             $('#f09').hide('fast');
             $('#f10').hide('fast');
             $('#f11').hide('fast');
+            $('#f12').hide('fast');
             var doctor='';
              @foreach($doctors as $doctor)
                 console.log('{{$doctor->nombre}}')
@@ -243,6 +246,7 @@
                 $('#f09').hide('fast');
                 $('#f10').hide('fast');
                 $('#f11').hide('fast');
+                $('#f12').hide('fast');
                 $('#f'+$(this).val()).show('fast');
             });
             $('body').on('click','.eliminar',function (e){
