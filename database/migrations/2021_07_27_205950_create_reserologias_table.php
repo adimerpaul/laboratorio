@@ -18,8 +18,8 @@ class CreateReserologiasTable extends Migration
             $table->string('requerido')->default('')->nullable();
             $table->string('tipomuestra')->default('')->nullable();
             $table->date('fechatoma')->nullable();
-            $table->date('fechaentrega')->nullable();
             $table->string('d1')->default('')->nullable();
+            $table->string('d2')->default('')->nullable();
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->unsignedBigInteger('user_id');
