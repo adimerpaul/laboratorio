@@ -45,4 +45,5 @@ Route::apiResource('/serologia',\App\Http\Controllers\SerologiaController ::clas
 Route::apiResource('/labserologia',\App\Http\Controllers\LabserologiaController ::class)->middleware('auth');
 Route::apiResource('/reserologia',\App\Http\Controllers\ReserologiaController ::class)->middleware('auth');
 Route::apiResource('/ensayo',\App\Http\Controllers\EnsayoController ::class)->middleware('auth');
+Route::post('/datos',[\App\Http\Controllers\EnsayoController ::class,'datos'])->middleware('auth');
 Route::get('/caduca',[\App\Http\Controllers\ReactivoController::class,'caduca'])->middleware('auth');
