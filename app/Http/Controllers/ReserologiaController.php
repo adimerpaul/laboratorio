@@ -48,7 +48,6 @@ class ReserologiaController extends Controller
         $input='';
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($this->generar($dato->id));
-        //return $this->generar($dato->id);
         return $pdf->download('Resultado.pdf');
         //return redirect('/pacientes');
     }
@@ -66,6 +65,12 @@ class ReserologiaController extends Controller
         ->get();
         $row=$row[0];
         $cadena='
+        <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
         <table style="width: 100%;color: black">
             <tr >
                 <td rowspan="4" style="height: 2cm"><img src="images/natividad.png" alt="Logo Clinica" srcset="" style="height: 4cm; width:8cm;"></td>

@@ -47,6 +47,7 @@ class EnsayoController extends Controller
         $input['user_id']=Auth::user()->id;
         $input['fechatoma']=date('Y-m-d');
         $dato=ensayo::create($input);
+
         $input='';
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($this->generar($dato->id));
@@ -82,6 +83,12 @@ class EnsayoController extends Controller
         ->get();
         $row=$row[0];
         $cadena='
+        <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
             <table style="width: 100%;color: black">
                 <tr >
                     <td rowspan="4" style="height: 2cm"><img src="images/natividad.png" alt="Logo Clinica" srcset="" style="height: 4cm; width:8cm;"></td>

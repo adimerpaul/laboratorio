@@ -11,6 +11,7 @@ class seriado extends Model
     protected $fillable=[
         'requerido',
         'tipomuestra',
+        
         'muestra1',
         'fecha1',
         'hora1',

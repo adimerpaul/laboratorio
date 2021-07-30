@@ -44,7 +44,6 @@ class sanguinia extends Model
         'd30',
         'd31',
         'd32',
-        'd33',
         'paciente_id',
         'user_id',
     ];
