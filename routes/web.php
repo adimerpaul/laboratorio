@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/historial', function () {
+Route::get('/historiales', function () {
     return view('historia');
 });
 
@@ -28,6 +28,7 @@ Route::get('/doctor', [App\Http\Controllers\HomeController::class, 'doctor'])->m
 Route::get('/pacientes', [App\Http\Controllers\HomeController::class, 'paciente'])->middleware('auth');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->middleware('auth');
 Route::get('/reportes', [App\Http\Controllers\HomeController::class, 'reportes'])->middleware('auth');
+Route::resource('/historial', App\Http\Controllers\HistorialController::class)->middleware('auth');
 
 Route::apiResource('/user', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::post('/estado/{user}', [App\Http\Controllers\UserController::class, 'estado'])->middleware('auth');
