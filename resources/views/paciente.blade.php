@@ -106,7 +106,7 @@
                                                             @method('delete')
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
-                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#reporte" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-list"></i></button>
+                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-list"></i></button>
                                                         <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#laboratorio" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-edad="{{$paciente->age()}}" data-sexo="{{$paciente->sexo}}" ><i class="fa fa-plus-circle"></i></button>
                                                     </div>
                                                 </div>
@@ -350,6 +350,7 @@
             })
             
         }
+        
     </script>
     <!--**********************************
         Content body end

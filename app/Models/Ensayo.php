@@ -10,7 +10,6 @@ class Ensayo extends Model
     use HasFactory;
     protected 
     $fillable=[
-
     'requerido',
     'tipomuestra',
     'fechatoma',
@@ -24,4 +23,13 @@ class Ensayo extends Model
     'd8',
     'paciente_id',
     'user_id',];
+
+    protected $hidden = ["created_at", "updated_at"];
+    public function paciente(){
+        return $this->belongsTo(Paciente::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }

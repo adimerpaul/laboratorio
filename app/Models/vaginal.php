@@ -32,5 +32,13 @@ class vaginal extends Model
         'paciente_id',
         'user_id',
     ];
+    
+    protected $hidden = ["created_at", "updated_at"];
+    public function paciente(){
+        return $this->belongsTo(Paciente::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 
 }
