@@ -849,7 +849,7 @@
 {{--                    </ul>--}}
                 </li>
                 <li>
-                    <a href="/historial" class="ai-icon" aria-expanded="false">
+                    <a href="/historiales" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-internet"></i>
                         <span class="nav-text">Historial</span>
                     </a>
