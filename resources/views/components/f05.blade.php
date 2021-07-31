@@ -1,5 +1,5 @@
 <div id="f05">
-    <form method="post" action="/vaginal" >
+    <form method="post" action="/vaginal" target="__blank">
         @csrf
         <table style="width: 100%;color: black">
             <tr >

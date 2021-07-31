@@ -1,5 +1,5 @@
 <div id="f08">
-    <form method="post" action="/seriado" >
+    <form method="post" action="/seriado" target="__blank">
         @csrf
         <table style="width: 100%;color: black">
             <tr >

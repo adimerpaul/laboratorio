@@ -1,6 +1,21 @@
 <div id="f10">
     <form method="post" action="/labserologia" >
         @csrf
+        <table style="width: 100%;color: black">
+            <tr >
+                <td rowspan="4" style="height: 2cm"><img src="images/natividad.png" alt="Logo Clinica" srcset="" style="height: 4cm; width:8cm;"></td>
+                <td style="color: blue; text-align:center; height:0.5cm;">SERVICIO DE LABORATORIO </td>
+            </tr>
+            <tr>
+                <td style="color: blue; text-align:center; height:0.5cm;">Telf: 5254721 Fax: 52-83667 </td>                
+            </tr>
+            <tr>
+                <td style="color: blue; text-align:center; height:0.5cm;">Emergencia las 24 horas del dia. </td>                
+            </tr>
+            <tr>
+                <td style="color: blue; text-align:center; height:0.5cm;">Bolivar Nº 753 entre Arica e Iquique </td>                
+            </tr>
+        </table>
         <table border="1" style="width: 100%;color: black">
             <tr>
                 <td colspan="3" style="text-align: center"><h3>SEROLOGIA</h3></td>
@@ -125,7 +140,7 @@
             <tr >
                 <td colspan="2" rowspan="2" >RESPONSABLE: {{Auth::user()->name}}</td>
 {{--                <td colspan="2" rowspan="4">{{Auth::user()->name}}</td>--}}
-                <td>
+                <td colspan="2">
                     FECHA DE TOMA DE MUESTRAS
                     <input placeholder="00" type="date" value="{{date('Y-m-d')}}"  style="width: 100%" name="fechatoma">
                 </td>
@@ -133,7 +148,7 @@
             <tr>
 {{--                <td colspan="2">FECHA DE ENTREGA DE MUESTRAS</td>--}}
 {{--                <td>{{date('Y-m-d')}}</td>--}}
-                <td>
+                <td colspan="2">
                     FECHA DE ENTREGA DE MUESTRAS
                     <input placeholder="00" type="date" value="{{date('Y-m-d')}}"  style="width: 100%" name="fechaentrega">
                 </td>

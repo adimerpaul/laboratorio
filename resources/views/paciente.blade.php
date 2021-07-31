@@ -348,6 +348,16 @@
                 })
 
             })
+            $('#lgm').change(function(){
+        if($(this).val() < 0.9) $('#d1').val('NEGATIVO');
+        if($(this).val() >= 0.9 && $(this).val() < 1.1) $('#d1').val('INDETERMINADO');
+        if($(this).val() >= 1.1) $('#d1').val('POSITIVO');
+    });
+    $('#lgg').change(function(){
+        if($(this).val() < 0.9) $('#d2').val('NEGATIVO');
+        if($(this).val() >= 0.9 && $(this).val() < 1.1) $('#d2').val('INDETERMINADO');
+        if($(this).val() >= 1.1) $('#d2').val('POSITIVO');
+    });
             
         }
         

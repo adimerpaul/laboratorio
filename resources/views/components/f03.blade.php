@@ -1,5 +1,5 @@
 <div id="f03">
-    <form method="post" action="/orina" >
+    <form method="post" action="/orina" target="__blank">
         @csrf
         <table style="width: 100%;color: black">
             <tr >

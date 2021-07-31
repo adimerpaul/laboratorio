@@ -47,8 +47,8 @@ class SeriadoController extends Controller
         $input='';
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($this->generar($dato->id));
-        return $pdf->download('sanguinea.pdf');
-        return redirect('/pacientes');
+        return $pdf->download('seriado.pdf');
+        //return redirect('/pacientes');
     }
 
     public function generar($id){

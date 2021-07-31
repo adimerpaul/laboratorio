@@ -1,5 +1,5 @@
 <div id="f01">
-    <form method="post" action="/hemograma" >
+    <form method="post" action="/hemograma" target="__blank">
         @csrf
         <table style="width: 100%;color: black">
             <tr >

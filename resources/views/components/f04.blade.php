@@ -1,5 +1,5 @@
 <div id="f04">
-    <form method="post" action="/uretral" >
+    <form method="post" action="/uretral" target="__blank">
         @csrf
         <table style="width: 100%;color: black">
             <tr >
