@@ -19,6 +19,7 @@ class CreatePacientesTable extends Migration
             $table->date('fechanac');
 //            $table->string('requerido');
             $table->string('sexo');
+            $table->string('celular')->nullable();
 //            $table->string('tipomuestra');
             $table->timestamps();
         });

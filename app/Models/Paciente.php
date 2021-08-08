@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     use HasFactory;
-    protected $fillable=['nombre','fechanac','sexo'];
+    protected $fillable=['nombre','fechanac','sexo','celular'];
     public function age()
     {
         return Carbon::parse($this->attributes['fechanac'])->age;

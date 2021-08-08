@@ -38,6 +38,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Celular (whatsapp)</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" min="0" name="celular" class="form-control" placeholder="numero celular">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Fecha Nacimiento</label>
                                                         <div class="col-sm-9">
                                                             <input type="date" name="fechanac" class="form-control" placeholder="Fecha Nacimiento">
@@ -73,6 +79,7 @@
                                         <th>Fecha nacimiento</th>
                                         <th>Edad</th>
                                         <th>Sexo</th>
+                                        <th>Celular</th>
 {{--                                        <th>Estado</th>--}}
                                         <th>Opciones</th>
 {{--                                        <th>Email</th>--}}
@@ -90,6 +97,7 @@
                                             <td>{{$paciente->fechanac}}</td>
                                             <td> <p>{{ $paciente->age() }} Años</p></td>
                                             <td>{{$paciente->sexo}}</td>
+                                            <td>{{$paciente->celular}}</td>
 {{--                                            @if($paciente->active==1)--}}
 {{--                                                <td><span class="badge badge-success badge-sm">ACTIVO</span></td>--}}
 {{--                                            @else--}}
@@ -99,14 +107,14 @@
                                                 <div class="d-flex">
                                                     <div class="btn-group">
 {{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
-                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}" data-celular="{{$paciente->celular}}"><i class="fa fa-pencil"></i></button>
 
                                                         <form action="paciente/{{$paciente->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
-                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}"><i class="fa fa-list"></i></button>
+                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-sexo="{{$paciente->sexo}}" data-fechanac="{{$paciente->fechanac}}" data-celular="{{$paciente->celular}}"><i class="fa fa-list"></i></button>
                                                         <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#laboratorio" data-id="{{$paciente->id}}" data-nombre="{{$paciente->nombre}}" data-edad="{{$paciente->age()}}" data-sexo="{{$paciente->sexo}}" ><i class="fa fa-plus-circle"></i></button>
                                                     </div>
                                                 </div>
@@ -147,6 +155,12 @@
                                                             {{--                                                            <input type="date" name="fechanac" class="form-control" placeholder="Sexo">--}}
                                                             <input type="radio" name="sexo" id="sexo1" value="Masculino" checked> Masculino
                                                             <input type="radio" name="sexo" id="sexo2" value="Femenino"> Femenino
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Celular</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" min="0" name="celular" id="celular" class="form-control" placeholder="Celular">
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -297,10 +311,11 @@
                 var button = $(event.relatedTarget) // Button that triggered the modal
                 $('#nombre').val(button.data('nombre'));
                 $('#fechanac').val(button.data('fechanac'));
+                $('#celular').val(button.data('celular'));
                 // console.log(button.data('fechanac'))
                 // $('#sexo').val(button.data('sexo'));
                 if (button.data('sexo')=='Masculino'){
-                    $('#sexo1').prop('checked', true);
+                    $('#sexo1').prop('checked', true);  
                 }else{
                     $('#sexo2').prop('checked', true);
                 }

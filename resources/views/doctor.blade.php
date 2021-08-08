@@ -38,6 +38,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Celular (whatsapp)</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" name="celular" class="form-control" min="0" placeholder="Numero de celular">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Email</label>
                                                         <div class="col-sm-9">
                                                             <input type="email" name="email" class="form-control" placeholder="Email">
@@ -68,6 +74,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nombre completo</th>
+                                        <th>Celular</th>
                                         <th>Email</th>
                                         <th>Tipo</th>
                                         <th>Estado</th>
@@ -84,6 +91,7 @@
                                                 {{$loop->index+1}}
                                             </td>
                                             <td>{{$user->name}}</td>
+                                            <td>{{$user->celular}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->tipo}}</td>
                                             @if($user->active==1)
@@ -96,7 +104,7 @@
                                                 <div class="d-flex">
                                                     <div class="btn-group">
 {{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
-                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}" data-celular="{{$user->celular}}"> <i class="fa fa-pencil"></i></button>
                                                         <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#key" data-id="{{$user->id}}" data-name="{{$user->name}}"><i class="fa fa-key"></i></button>
                                                         <form action="user/{{$user->id}}" method="post">
                                                             @csrf
@@ -137,6 +145,12 @@
                                                         <label class="col-sm-3 col-form-label">Email</label>
                                                         <div class="col-sm-9">
                                                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Celular</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" name="celular" id="celular" class="form-control" placeholder="celular">
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -197,6 +211,7 @@
                 var button = $(event.relatedTarget) // Button that triggered the modal
                 $('#name').val(button.data('name'));
                 $('#email').val(button.data('email'));
+                $('#celular').val(button.data('celular'));
                 $('#frmmodificar').attr('action','user/'+button.data('id'));
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
