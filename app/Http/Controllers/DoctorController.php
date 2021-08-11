@@ -15,6 +15,8 @@ class DoctorController extends Controller
     public function index()
     {
         //
+        $doctor=Doctor::all();
+        return view('doctor',['doctors'=>$doctor]);
     }
 
     /**
@@ -26,6 +28,8 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         //
+        $doctor=Doctor::create($request->all());
+        return redirect('doctor');
     }
 
     /**
@@ -49,6 +53,8 @@ class DoctorController extends Controller
     public function update(Request $request, Doctor $doctor)
     {
         //
+        $doctor->update($request->all());
+        return redirect('doctor');
     }
 
     /**
@@ -60,5 +66,16 @@ class DoctorController extends Controller
     public function destroy(Doctor $doctor)
     {
         //
+        $doctor->delete();
+        return redirect('doctor');
+    }
+    public function estadodoc( Doctor $doctor)
+    {
+        if ($doctor->activo==1)
+            $doctor->activo=0;
+        else
+            $doctor->activo=1;
+        $doctor->save();
+        return redirect('/doctor');
     }
 }

@@ -30,11 +30,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function doctor()
-    {
-        $users=User::where('id','!=',1)->get();
-        return view('doctor',['users'=>$users]);
-    }
+
     public function paciente()
     {
         $doctors=Doctor::all();

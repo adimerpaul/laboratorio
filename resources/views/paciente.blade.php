@@ -278,9 +278,9 @@
             var doctor='';
              @foreach($doctors as $doctor)
                 console.log('{{$doctor->nombre}}')
-                doctor=doctor+'<option>{{$doctor->nombre}}</option>'
+                doctor=doctor+'<option value="{{$doctor->id}}">{{$doctor->nombre}}</option>'
              @endforeach
-                 $('.doctors').html(doctor);
+                 $('#doctors').html(doctor);
 
 
             $('#labo').change(function (){

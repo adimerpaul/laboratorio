@@ -16,6 +16,8 @@ class UserController extends Controller
     public function index()
     {
         //
+        $users=User::where('id','!=',1)->get();
+        return view('user',['users'=>$users]);
     }
 
     /**
@@ -28,7 +30,7 @@ class UserController extends Controller
     {
         User::create($request->all());
 //        echo 1;
-        return redirect('/doctor');
+        return redirect('/user');
 
     }
 
@@ -59,7 +61,7 @@ class UserController extends Controller
             $user->update($request->all());
         }
 
-        return redirect('/doctor');
+        return redirect('/user');
     }
     public function estado( User $user)
     {
@@ -68,7 +70,7 @@ class UserController extends Controller
         else
             $user->active=1;
         $user->save();
-        return redirect('/doctor');
+        return redirect('/user');
     }
 
     /**
@@ -80,6 +82,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect('/doctor');
+        return redirect('/user');
     }
 }

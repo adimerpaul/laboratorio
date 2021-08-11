@@ -26,21 +26,15 @@
                                             <div class="modal-header bg-success ">
                                                 <h5 class="modal-title text-white"><i class="fa fa-user-plus"></i>Crear nuevo doctor</h5>
                                                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                                </button>E
+                                                </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="post" action="/doctor">
+                                                <form method="post" action="/user">
                                                     @csrf
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Cedula Identidad</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="ci" class="form-control" placeholder="ci">
-                                                        </div>
-                                                    </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Nombre Completo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo">
+                                                            <input type="text" name="name" class="form-control" placeholder="Nombre Completo">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -50,15 +44,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Especialidad</label>
+                                                        <label class="col-sm-3 col-form-label">Email</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="especialidad" class="form-control" placeholder="Especialidad">
+                                                            <input type="email" name="email" class="form-control" placeholder="Email">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Numero Matricula</label>
+                                                        <label class="col-sm-3 col-form-label">Password</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="matricula" class="form-control" placeholder="num matricula">
+                                                            <input type="password" name="password" class="form-control" placeholder="Password">
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -79,27 +73,28 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>CI</th>
                                         <th>Nombre completo</th>
                                         <th>Celular</th>
-                                        <th>Especialidad</th>
-                                        <th>Matricula</th>
+                                        <th>Email</th>
+                                        <th>Tipo</th>
                                         <th>Estado</th>
                                         <th>Opciones</th>
+{{--                                        <th>Email</th>--}}
+{{--                                        <th>Joining Date</th>--}}
+{{--                                        <th>Action</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($doctors as $doctor)
+                                    @foreach ($users as $user)
                                         <tr>
                                             <td>
                                                 {{$loop->index+1}}
                                             </td>
-                                            <td>{{$doctor->ci}}</td>
-                                            <td>{{$doctor->nombre}}</td>
-                                            <td>{{$doctor->celular}}</td>
-                                            <td>{{$doctor->especialidad}}</td>
-                                            <td>{{$doctor->matricula}}</td>
-                                            @if($doctor->activo==1)
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->celular}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->tipo}}</td>
+                                            @if($user->active==1)
                                                 <td><span class="badge badge-success badge-sm">ACTIVO</span></td>
                                             @else
                                                 <td><span class="badge badge-danger badge-sm">INACTIVO</span></td>
@@ -109,13 +104,14 @@
                                                 <div class="d-flex">
                                                     <div class="btn-group">
 {{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
-                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$doctor->id}}" data-ci="{{$doctor->ci}}" data-nombre="{{$doctor->nombre}}" data-especialidad="{{$doctor->especialidad}}" data-matricula="{{$doctor->matricula}}" data-celular="{{$doctor->celular}}"> <i class="fa fa-pencil"></i></button>
-                                                        <form action="doctor/{{$doctor->id}}" method="post">
+                                                        <button type="button" class="btn btn-primary shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}" data-celular="{{$user->celular}}"> <i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn btn-info shadow btn-xs sharp" data-toggle="modal" data-target="#key" data-id="{{$user->id}}" data-name="{{$user->name}}"><i class="fa fa-key"></i></button>
+                                                        <form action="user/{{$user->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
-                                                        <form action="estadodoc/{{$doctor->id}}" method="post">
+                                                        <form action="estado/{{$user->id}}" method="post">
                                                             @csrf
                                                             <button type="submit" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></button>
                                                         </form>
@@ -140,27 +136,15 @@
                                                     @csrf
                                                     @method('put')
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Cedula Identidad</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="ci" id="ci" class="form-control" placeholder="ci" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Nombre Completo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo">
+                                                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre Completo">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Especialidad</label>
+                                                        <label class="col-sm-3 col-form-label">Email</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="especialidad" id="especialidad" class="form-control" placeholder="especialidad">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Numero Matricula</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="matricula" id="matricula" class="form-control" placeholder="matricula">
+                                                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -178,7 +162,34 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="modal fade" id="key" tabindex="-1" aria-labelledby="keyLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-info">
+                                                <h5 class="modal-title text-white" id="keyLabel"></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post" action="" id="frmkey">
+                                                    @csrf
+                                                    @method('put')
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Password</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
+                                                        <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-key"></i>Modificar Password</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -198,25 +209,23 @@
 
             $('#modificar').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
-                $('#ci').val(button.data('ci'));
-                $('#nombre').val(button.data('nombre'));
-                $('#especialidad').val(button.data('especialidad'));
-                $('#matricula').val(button.data('matricula'));
+                $('#name').val(button.data('name'));
+                $('#email').val(button.data('email'));
                 $('#celular').val(button.data('celular'));
-                $('#frmmodificar').attr('action','doctor/'+button.data('id'));
+                $('#frmmodificar').attr('action','user/'+button.data('id'));
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
-                modal.find('.modal-title').text('Doctor ' + button.data('nmbre'))
+                modal.find('.modal-title').text('Doctor ' + button.data('name'))
                 // modal.find('.modal-body input').val(recipient)
             })
             $('#key').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
                 // $('#name').val(button.data('name'));
                 // $('#email').val(button.data('email'));
-                $('#frmkey').attr('action','doctor/'+button.data('id'));
+                $('#frmkey').attr('action','user/'+button.data('id'));
                 // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
-                modal.find('.modal-title').text('Doctor ' + button.data('nombre'))
+                modal.find('.modal-title').text('Doctor ' + button.data('name'))
                 // modal.find('.modal-body input').val(recipient)
             })
         }

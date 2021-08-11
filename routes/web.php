@@ -32,7 +32,9 @@ Route::resource('/historial', App\Http\Controllers\HistorialController::class)->
 
 Route::apiResource('/user', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::post('/estado/{user}', [App\Http\Controllers\UserController::class, 'estado'])->middleware('auth');
+Route::post('/estadodoc/{doctor}', [App\Http\Controllers\DoctorController::class, 'estadodoc'])->middleware('auth');
 Route::apiResource('/paciente',\App\Http\Controllers\PacienteController::class)->middleware('auth');
+Route::apiResource('/doctor',\App\Http\Controllers\DoctorController::class)->middleware('auth');
 Route::apiResource('/hemograma',\App\Http\Controllers\HemogramaController::class)->middleware('auth');
 Route::apiResource('/orina',\App\Http\Controllers\OrinaController::class)->middleware('auth');
 Route::apiResource('/uretral',\App\Http\Controllers\UretralController::class)->middleware('auth');

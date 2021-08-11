@@ -29,9 +29,14 @@
             </tr>
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
-                <td><input type="text" style="width: 100%" name="requerido" placeholder="Requerido por" list="doctors"></td>
-                <datalist id="doctors" class="doctors">
+                <td>
+                    <select name="requerido" id="" style="width: 100%">
+                        <option value="">Seleccionar</option>
+                        <div id="doctors" class="doctors"></div>
+                    </select>
+                </td>
                 </datalist>
+
                 <td style="color: darkblue">SEXO</td>
                 <td><label class="txtsexo"></label></td>
             </tr>
