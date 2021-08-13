@@ -10,8 +10,18 @@ class Reactivo extends Model
     use HasFactory;
     protected $fillable=[
         'nombre',
-        'lote',
-        'fechavencimiento',
+        'codigo',
         'estado',
+        'user_id'
     ];
+
+    protected $hidden = ["created_at", "updated_at"];
+
+    public function inventarios(){
+        return $this->hasMany(Inventario::class);
+    }
+    public function retiros(){
+        return $this->hasMany(Retiro::class);
+    }
+
 }

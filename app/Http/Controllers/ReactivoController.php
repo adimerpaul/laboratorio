@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reactivo;
+use App\Models\Inventario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReactivoController extends Controller
 {
@@ -14,7 +16,7 @@ class ReactivoController extends Controller
      */
     public function index()
     {
-        $reactivos=Reactivo::all();
+        $reactivos=Reactivo::with('inventarios')->get();
         return view('reactivo',['reactivos'=>$reactivos]);
     }
 
@@ -26,7 +28,7 @@ class ReactivoController extends Controller
      */
     public function store(Request $request)
     {
-        Reactivo::create($request->all());
+        $reactivo=Reactivo::create($request->all()+ ['user_id' => Auth::user()->id]);
         return  redirect('reactivo');
     }
 
@@ -73,7 +75,7 @@ class ReactivoController extends Controller
         return  redirect('reactivo');
     }
     public function caduca(){
-        $reactivos=Reactivo::where('estado','ACTIVO')->whereDate('fechavencimiento','>=',now())->get();
+        $reactivos=Inventario::where('estado','ACTIVO')->whereDate('fechavencimiento','>=',now())->get();
         return view('caduca',['reactivos'=>$reactivos]);
     }
 }

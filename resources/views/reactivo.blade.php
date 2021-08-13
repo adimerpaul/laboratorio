@@ -38,20 +38,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Lote</label>
+                                                        <label class="col-sm-3 col-form-label">Codigo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="lote" class="form-control" placeholder="Lote">
+                                                            <input type="text" name="codigo" class="form-control" placeholder="Codigo">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Fecha venciemitno</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="date" name="fechavencimiento" value="{{date('Y-m-d')}}" class="form-control" placeholder="Fecha venciemitno">
-                                                        </div>
-                                                    </div>
+ 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
-                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-user-plus"></i>Crear doctor</button>
+                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-user-plus"></i>Crear Reactivo</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -68,8 +63,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nombre </th>
-                                        <th>Lote</th>
-                                        <th>Fechavencimiento</th>
+                                        <th>Codigo</th>
                                         <th>Estado</th>
                                         <th>Opciones</th>
                                     </tr>
@@ -82,8 +76,7 @@
                                             </td>
                                             <td>{{$reactivo->nombre}}</td>
 
-                                            <td>{{$reactivo->lote}}</td>
-                                            <td>{{$reactivo->fechavencimiento}}</td>
+                                            <td>{{$reactivo->codigo}}</td>
                                             @if($reactivo->estado=='ACTIVO')
                                                 <td><span class="badge badge-success badge-sm">ACTIVO</span></td>
                                             @else
@@ -92,18 +85,14 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <div class="btn-group">
-{{--                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>--}}
-                                                        <button type="button" class="btn btn-warning shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$reactivo->id}}" data-nombre="{{$reactivo->nombre}}" data-lote="{{$reactivo->lote}}" data-fechavencimiento="{{$reactivo->fechavencimiento}}"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn btn-warning shadow btn-xs sharp" data-toggle="modal" data-target="#modificar" data-id="{{$reactivo->id}}" data-nombre="{{$reactivo->nombre}}" data-codigo="{{$reactivo->codigo}}" ><i class="fa fa-pencil"></i></button>
                                                         <form action="reactivo/{{$reactivo->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button type="submit" class="eliminar btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </form>
-{{--                                                        <form action="estado/{{$reactivo->id}}" method="post">--}}
-{{--                                                            @csrf--}}
-{{--                                                            <button type="submit" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></button>--}}
-{{--                                                        </form>--}}
                                                         <a href="reactivo/{{$reactivo->id}}" type="submit" class="btn btn-dark shadow btn-xs sharp"><i class="fa fa-check-circle"></i></a>
+                                                        <button type="button" class="btn btn-success shadow btn-xs sharp" data-toggle="modal" data-target="#agregar" data-id="{{$reactivo->id}}" data-nombre="{{$reactivo->nombre}}"  ><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -111,6 +100,7 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+
                                 <div class="modal fade" id="modificar" tabindex="-1" aria-labelledby="modificarLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -131,17 +121,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Lote</label>
+                                                        <label class="col-sm-3 col-form-label">Codigo</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="lote" id="lote" class="form-control" placeholder="Lote">
+                                                            <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Codigo">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Fecha vencimiento</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="date" name="fechavencimiento" id="fechavencimiento" class="form-control" placeholder="Fecha vencimiento">
-                                                        </div>
-                                                    </div>
+                 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
                                                         <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i>Modificar Reactivo</button>
@@ -151,6 +136,69 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="agregarLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-warning">
+                                                <h5 class="modal-title " id="agregarLabel"></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post" action="" id="frmagregar">
+                                                    @csrf
+                                                    @method('post')
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-9">
+                                                            <input type="hidden" name="idinv" id="idinv" class="form-control" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Fecha Vencimiento</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="date" name="fechavencimiento" id="fechavencimiento" class="form-control" placeholder="fecha vencimiento">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Marca</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Lote</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="lote" id="lote" class="form-control" placeholder="lote">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Ingreso cantidad</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="ingreso" id="ingreso" class="form-control" placeholder="Ingreso">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Observacion</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="observacion" id="observacion" class="form-control" placeholder="observacion">
+                                                        </div>
+                                                    </div>
+                 
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-danger light" data-dismiss="modal"><i class="fa fa-trash"></i>Cerrar</button>
+                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i>Agregar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -171,24 +219,20 @@
             $('#modificar').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
                 $('#nombre').val(button.data('nombre'));
-                $('#lote').val(button.data('lote'));
-                $('#fechavencimiento').val(button.data('fechavencimiento'));
+                $('#codigo').val(button.data('codigo'));
                 $('#frmmodificar').attr('action','reactivo/'+button.data('id'));
-                // console.log($('#frmmodificar').attr('action'));
                 var modal = $(this)
                 modal.find('.modal-title').text('Reactivo ' + button.data('nombre'))
-                // modal.find('.modal-body input').val(recipient)
             })
-            $('#key').on('show.bs.modal', function (event) {
+            
+            $('#agregar').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
-                // $('#name').val(button.data('name'));
-                // $('#email').val(button.data('email'));
-                $('#frmkey').attr('action','user/'+button.data('id'));
-                // console.log($('#frmmodificar').attr('action'));
+                $('#idinv').val(button.data('id'));
+                $('#frmagregar').attr('action','inventario/');
                 var modal = $(this)
-                modal.find('.modal-title').text('Doctor ' + button.data('name'))
-                // modal.find('.modal-body input').val(recipient)
+                modal.find('.modal-title').text('Reactivo ' + button.data('nombre'))
             })
+
         }
     </script>
     <!--**********************************
