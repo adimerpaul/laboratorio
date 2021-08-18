@@ -30,14 +30,10 @@
             <tr>
                 <td style="color: darkblue">REQUERIDO POR</td>
                 <td>
-                    <select name="requerido" id="" style="width: 100%">
-                        <option value="">Seleccionar</option>
-                        <div id="doctors" class="doctors"></div>
-                    </select>
+                    <select name="requerido" id="requerido" required style="width:100%"></select>
                 </td>
-                </datalist>
-
-                <td style="color: darkblue">SEXO</td>
+                
+                <td style="color: darkblue">SEXO </td>
                 <td><label class="txtsexo"></label></td>
             </tr>
             <tr>

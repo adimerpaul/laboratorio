@@ -280,7 +280,8 @@
                 console.log('{{$doctor->nombre}}')
                 doctor=doctor+'<option value="{{$doctor->id}}">{{$doctor->nombre}}</option>'
              @endforeach
-                 $('#doctors').html(doctor);
+                $('#requerido').append(doctor);
+                 //$('#doctors').html(doctor);
 
 
             $('#labo').change(function (){
